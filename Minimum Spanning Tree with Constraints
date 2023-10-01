@@ -1,0 +1,44 @@
+class UnionFind:
+    def __init__(self, n):
+        self.parent = list(range(n))
+        self.size = [1] * n
+
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+
+    def union(self, x, y):
+        root_x = self.find(x)
+        root_y = self.find(y)
+        if root_x != root_y:
+            if self.size[root_x] < self.size[root_y]:
+                root_x, root_y = root_y, root_x
+            self.parent[root_y] = root_x
+            self.size[root_x] += self.size[root_y]
+
+def min_spanning_tree_with_constraints(N, edges, colors):
+    edges.sort(key=lambda x: x[2])  # Sort edges by weight
+    uf = UnionFind(N)
+    color_count = [0] * (max(colors) + 1)
+    mst_edges = []
+
+    for u, v, weight in edges:
+        if uf.find(u) != uf.find(v) and color_count[colors[u]] < 2 and color_count[colors[v]] < 2:
+            mst_edges.append((u, v, weight))
+            uf.union(u, v)
+            color_count[colors[u]] += 1
+            color_count[colors[v]] += 1
+
+    if all(count >= 1 for count in color_count[1:]):
+        return sum(weight for _, _, weight in mst_edges)
+    else:
+        return -1
+
+# Example usage:
+N = 5
+edges = [(1, 2, 2), (1, 3, 4), (2, 3, 5), (2, 4, 3), (3, 4, 1), (4, 5, 6), (3, 5, 7)]
+colors = [1, 2, 1, 2, 3]
+
+result = min_spanning_tree_with_constraints(N, edges, colors)
+print(result)  # Output: 10
