@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INPUT PROJECT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <style>
+        div{
+            background-image:linear-gradient(pink,rgb(88, 126, 253));
+            border-radius:5px;
+            padding:20px;
+            width:400px;
+            margin:auto;
+            box-shadow:4px 4px 20px rgb(0, 247, 255);
+            margin-top:17rem;
+            
+        }
+        input[type=text],select{
+            width:100%;
+            border:1px solid rgb(206, 204, 204);
+            border-radius: 4px;
+            padding:12px 20px;
+            margin:8px 0;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        input[type=submit]{
+            background-color: #ffc505;
+            text-align: center;
+            padding:10px;
+            border: none;
+            width:100%;
+            color:white;
+            margin:10px 0px;
+            border-radius:5px;
+            
+
+        }
+        input[type=submit]:hover{
+            background-color:rgb(18, 130, 190);
+        }
+        body{
+            /* background-color: rgb(255, 255, 255); */
+            background-image:url(https://images.pexels.com/photos/7130470/pexels-photo-7130470.jpeg?auto=compress&cs=tinysrgb&w=1600);
+            background-size:2000px 1200px;
+            background-repeat:repeat;
+         }
+         .hii{
+            font-weight: 1000;
+            font-size: 1.2rem;;
+            font-family: 'Poppins', sans-serif;
+            color: rgb(36, 36, 36);
+         }
+         @media(max-width:440px){
+            div{
+               width:300px;
+            }
+            body{
+                background-image:url(https://images.pexels.com/photos/7130470/pexels-photo-7130470.jpeg?auto=compress&cs=tinysrgb&w=1600);
+                background-size: auto;
+            }
+         }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="">
+            <label for="fname" class="hii">First name</label>
+            <input type="text" name="firstname" id="fname" placeholder="First Name..">
+
+            <label for="lname" class="hii">Last name</label>
+            <input type="text" name="lastname" id="lname" placeholder="Last Name..">
+
+            <label for="country" class="hii">Country</label>
+            <select name="country" id="country">
+                <option value="australia">Australia</option>
+                <option value="india">India</option>
+                <option value="taiwan">Taiwan</option>
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
