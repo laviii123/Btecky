@@ -1,0 +1,63 @@
+package com.company;
+ import java.util.Scanner;
+ import java.util.Random;
+ class Game {
+     int inputuser, random_number,Guess_count=0;
+
+     public int Constract() {
+         Random ran = new Random();
+         random_number = ran.nextInt(100);
+         return random_number;
+     }
+     public int takeuserinput() {
+         Scanner sc = new Scanner(System.in);
+         Game in = new Game();
+         System.out.print("Guess any Number Between 1 to 100 :");
+         in.inputuser = sc.nextInt();
+         return in.inputuser;
+     }
+     public int isCorrectNumber(int e,int ra) {
+         Guess_count++;
+            if(e < ra) {
+             System.out.println("\t \t Your Number is Smaller than Computer Number.");
+               }
+         else if(e > ra) {
+             System.out.println("\t \t Your Number is Greater than Computer Number.");
+         } else {
+             System.out.println("\t \t Congratulation Your Guess Number is Right");
+               return 0;
+         }
+         return Guess_count;
+     }
+
+ }
+
+    public class Exercise_3 {
+    public static void main(String[] args) {
+  /*      Create a class Game, which allows a user to play "Guess the Number "
+           game once .Game should have Following method.
+           1. Constractor to generates the random number.
+           2. takeuserinput() to take user input of number.
+           3. isCorrectNumber() to detect where the user number entered  is true.
+           4. Getter and Setter for noOfGuesses.
+           Use properties such as noOfGuesses(int) etc to gets this task done.
+   */
+        Game inp = new Game();
+        int i = 0, r, u  ,c;
+        for (i = 0; i < 15; i++) {
+            System.out.print("\t");
+        }
+        System.out.println("*** Welcome  Game of a Guess the number ***");
+        for (i = 0; i <= 17; i++) {
+            System.out.print("\t");
+        }
+        System.out.println(" *** Start a Game ***");
+        r = inp.Constract();
+        do{
+            u = inp.takeuserinput();
+            c= inp.isCorrectNumber(u,r);
+        }while (c!=0);
+        System.out.println("\t \t \t Your Number of Guess are: " +inp.Guess_count);
+    }
+}
+
