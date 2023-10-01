@@ -1,0 +1,121 @@
+import pygame
+import random
+
+# Initialize Pygame
+pygame.init()
+
+# Set up display
+width, height = 800, 600
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption("Snake Game")
+
+# Colors
+white = (255, 255, 255)
+green = (0, 255, 0)
+red = (255, 0, 0)
+
+# Clock to control the game's frame rate
+clock = pygame.time.Clock()
+
+# Snake class
+class Snake:
+    def __init__(self):
+        self.body = [(random.randint(0, (width - 20) // 10) * 10, random.randint(0, (height - 20) // 10) * 10)]
+        self.direction = random.choice(['UP', 'DOWN', 'LEFT', 'RIGHT'])
+    
+    def move(self):
+        x, y = self.body[0]
+        if self.direction == 'UP':
+            self.body = [(x, y - 10)] + self.body[:-1]
+        elif self.direction == 'DOWN':
+            self.body = [(x, y + 10)] + self.body[:-1]
+        elif self.direction == 'LEFT':
+            self.body = [(x - 10, y)] + self.body[:-1]
+        elif self.direction == 'RIGHT':
+            self.body = [(x + 10, y)] + self.body[:-1]
+    
+    def grow(self):
+        x, y = self.body[-1]
+        if self.direction == 'UP':
+            self.body.append((x, y - 10))
+        elif self.direction == 'DOWN':
+            self.body.append((x, y + 10))
+        elif self.direction == 'LEFT':
+            self.body.append((x - 10, y))
+        elif self.direction == 'RIGHT':
+            self.body.append((x + 10, y))
+
+    def check_collision(self):
+        return len(self.body) > 1 and self.body[0] in self.body[1:]
+    
+    def get_head_position(self):
+        return self.body[0]
+    
+    def get_body(self):
+        return self.body
+    
+# Food class
+class Food:
+    def __init__(self):
+        self.position = (random.randint(0, (width - 20) // 10) * 10, random.randint(0, (height - 20) // 10) * 10)
+        self.is_food_on_screen = True
+    
+    def spawn_food(self):
+        if not self.is_food_on_screen:
+            self.position = (random.randint(0, (width - 20) // 10) * 10, random.randint(0, (height - 20) // 10) * 10)
+            self.is_food_on_screen = True
+        return self.position
+    
+    def set_food_on_screen(self, choice):
+        self.is_food_on_screen = choice
+
+def draw_objects(screen, snake, food):
+    screen.fill(white)
+
+    for pos in snake.get_body():
+        pygame.draw.rect(screen, green, pygame.Rect(pos[0], pos[1], 10, 10))
+
+    pygame.draw.rect(screen, red, pygame.Rect(food.position[0], food.position[1], 10, 10))
+
+    pygame.display.flip()
+
+def main():
+    snake = Snake()
+    food = Food()
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+            # Control the snake's direction
+            keys = pygame.key.get_pressed()
+            if (keys[pygame.K_UP] or keys[pygame.K_w]) and not snake.direction == 'DOWN':
+                snake.direction = 'UP'
+            elif (keys[pygame.K_DOWN] or keys[pygame.K_s]) and not snake.direction == 'UP':
+                snake.direction = 'DOWN'
+            elif (keys[pygame.K_LEFT] or keys[pygame.K_a]) and not snake.direction == 'RIGHT':
+                snake.direction = 'LEFT'
+            elif (keys[pygame.K_RIGHT] or keys[pygame.K_d]) and not snake.direction == 'LEFT':
+                snake.direction = 'RIGHT'
+
+        snake.move()
+
+        if snake.check_collision():
+            break
+
+        if snake.get_head_position() == food.position:
+            snake.grow()
+            food.set_food_on_screen(False)
+
+        food_position = food.spawn_food()
+        draw_objects(screen, snake, food)
+
+        clock.tick(10)
+
+    pygame.quit()
+    quit()
+
+if __name__ == "__main__":
+    main()
