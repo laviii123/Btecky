@@ -1,0 +1,93 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+System.out.println("***********************************");
+System.out.println("   JAY SHREE RAM CABS");
+System.out.println("***********************************");
+System.out.println("Enter Your name=");
+        String name=sc.next();
+System.out.println("Enter Contact number=");
+        int no= sc.nextInt();
+        int count=0;
+        int rem;
+        int time=0,km=0;
+        String dp,pp;
+System.out.println("Enter number:");
+        no= sc.nextInt();
+        do {
+System.out.println("Enter number:");
+            no = sc.nextInt();
+            while (no > 0) {
+                rem = no % 10;
+                count++;
+                no = no / 10;
+            }
+}while (count!=10);
+
+System.out.println("Enter Pickup Point=");
+        pp=sc.next();
+System.out.println("Enter Droping Point=");
+dp=sc.next();
+System.out.println("Enter Kilo meters=");
+        km=sc.nextInt();
+System.out.println("Enter Time =");
+        time=sc.nextInt();
+System.out.println("Choose Vehicle= \n 1. Two-Wheeler OLA \n 2.SUV 700 \n 3. Maruti suzuki \n 4. Auto \n 5.M G Hector");
+        int ch=sc.nextInt();
+        switch(ch){
+            case 1:
+                if (time<12) {
+System.out.println("Total price for your trip =" + (km * 10));
+                }
+                else {
+System.out.println("Total price for your trip =" + (km * 15));
+                }
+                break;
+            case 2:
+                if (time<12) {
+System.out.println("Total price for your trip =" +(km * 20));
+
+}
+                else
+                {
+System.out.println("Total price for your trip ="+(km*25));
+                }
+                break;
+            case 3:
+                if (time<12) {
+System.out.println("Total price for your trip =" + (km * 30));
+                }
+                else
+                {
+System.out.println("Total price for your trip ="+(km*35));
+                }
+                break;
+            case 4:
+                if (time<12) {
+System.out.println("Total price for your trip =" + (km * 25));
+                }
+                else {
+System.out.println("Total price for your trip ="+(km*30));
+                }
+                break;
+            case 5:
+                if (time<12)
+                {
+System.out.println("Total price for your trip ="+(km*50));
+                }
+                else {
+System.out.println("Total price for your trip ="+(km*70));
+                }
+        }
+System.out.println("Want to Confirm Your Order = \n 1. Yes \n 2. No");
+        int ans=sc.nextInt();
+        if(ans==1)
+        {
+System.out.println("Your order is confirmed. \n Enjoy the Trip ☻");
+        }
+        else {
+System.out.println("Thank for Giving Your Time \n Let Meet You Soon ☻");
+        }
+    }
+}
