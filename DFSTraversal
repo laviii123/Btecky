@@ -1,0 +1,46 @@
+#include <stdio.h>
+int stack[100];
+int a[10][10],visited[10];
+int n;
+int top=-1;
+void push(int x){
+    top++;
+    stack[top]=x;
+}
+int pop(){
+    return stack[top--];
+}
+void DFS(int v)
+{
+        int i;
+        push(v);
+        while(top!=-1)
+        {
+                v = pop();
+                if(visited[v]==0)
+                {
+                        printf("%d ",v);
+                        visited[v]=1;
+                }
+                for(i=1; i<=n; i++)
+                {
+                        if(a[v][i]==1 && visited[i]==0)
+                                push(i);
+                }
+        }
+}
+int main()
+{
+    printf("give no of vertices:");
+    scanf("%d",&n);
+    
+    printf("give matrix:\n");
+    for(int i=1;i<=n;i++){
+        visited[i]=0;
+        for(int j=1;j<=n;j++){
+            scanf("%d",&a[i][j]);
+        }
+    }
+    DFS(2);
+    
+}
