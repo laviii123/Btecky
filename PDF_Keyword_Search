@@ -1,0 +1,48 @@
+import os
+import glob
+import fitz  # PyMuPDF
+
+# Function to extract text from a PDF file
+def extract_text_from_pdf(pdf_path):
+    text = ""
+    pdf_document = fitz.open(pdf_path)
+    for page_num in range(pdf_document.page_count):
+        page = pdf_document.load_page(page_num)
+        text += page.get_text()
+    pdf_document.close()
+    return text
+
+# Function to search for keywords in PDF text
+def search_keywords_in_pdf(pdf_path, keywords):
+    text = extract_text_from_pdf(pdf_path)
+    return any(keyword in text for keyword in keywords)
+
+# Function to list PDF files in a directory
+def list_pdf_files(directory):
+    pdf_files = glob.glob(os.path.join(directory, "*.pdf"))
+    return pdf_files
+
+# Main function
+def main():
+    folder_path = input("Enter the folder path where PDFs are located: ")
+    keywords = input("Enter keywords separated by commas: ").split(',')
+
+    pdf_files = list_pdf_files(folder_path)
+    matching_pdfs = [pdf for pdf in pdf_files if search_keywords_in_pdf(pdf, keywords)]
+
+    if not matching_pdfs:
+        print("No PDFs matching the keywords were found.")
+        return
+
+    # Create an HTML file with links to matching PDFs
+    html_file_path = os.path.join(folder_path, "pdf_links.html")
+    with open(html_file_path, 'w') as html_file:
+        html_file.write("<html><body>\n")
+        for pdf_path in matching_pdfs:
+            html_file.write(f'<a href="{pdf_path}">{os.path.basename(pdf_path)}</a><br>\n')
+        html_file.write("</body></html>")
+
+    print(f"HTML file with links to matching PDFs created at {html_file_path}")
+
+if __name__ == "__main__":
+    main()
