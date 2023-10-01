@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Html CRUD with Pure JavaScript
+    </title>
+    <style>
+        body > table{
+    width: 80%;
+}
+
+table{
+    border-collapse: collapse;
+}
+table.list{
+    width:100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even),table.list thead>tr {
+    background-color: #dddddd;
+}
+
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    width: 30%;
+    background-color: #ddd;
+    color: #000;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form div.form-action-buttons{
+    text-align: right;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0000ee;
+    margin-right: 4px;
+}
+
+label.validation-error{
+    color:   red;
+    margin-left: 5px;
+}
+
+.hide{
+    display:none;
+}
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>CourseCode*</label><label class="validation-error hide" id="CourseCodeValidationError">This field is required.</label>
+                        <input type="text" name="CourseCode" id="CourseCode">
+                    </div>
+                    <div>
+                        <label>Marks</label>
+                        <input type="text" name="marks" id="marks">
+                    </div>
+                    <div>
+                        <label>Credit</label>
+                        <input type="text" ncredit" id="credit">
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="CourseList">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Marks</th>
+                            <th>Credit</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script>
+        var selectedRow = null
+
+function onFormSubmit() {
+    if (validate()) {
+        var formData = readFormData();
+        if (selectedRow == null)
+            insertNewRecord(formData);
+        else
+            updateRecord(formData);
+        resetForm();
+    }
+}
+
+function readFormData() {
+    var formData = {};
+    formData["CourseCode"] = document.getElementById("CourseCode").value;
+    formData["marks"] = document.getElementById("marks").value;
+    formData["credit"] = document.getElementById("credit").value;
+    return formData;
+}
+
+function insertNewRecord(data) {
+    var table = document.getElementById("CourseList").getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow(table.length);
+    cell1 = newRow.insertCell(0);
+    cell1.innerHTML = data.CourseCode;
+    cell2 = newRow.insertCell(1);
+    cell2.innerHTML = data.marks;
+    cell3 = newRow.insertCell(2);
+    cell3.innerHTML = data.credit;
+    cell3 = newRow.insertCell(4);
+    cell3.innerHTML = `<a onClick="onEdit(this)">Edit</a>
+                       <a onClick="onDelete(this)">Delete</a>`;
+}
+
+function resetForm() {
+    document.getElementById("CourseCode").value = "";
+    document.getElementById("marks").value = "";
+    document.getElementById("credit").value = "";
+    selectedRow = null;
+}
+
+function onEdit(td) {
+    selectedRow = td.parentElement.parentElement;
+    document.getElementById("CourseCode").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("marks").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("credit").value = selectedRow.cells[2].innerHTML;
+}
+function updateRecord(formData) {
+    selectedRow.cells[0].innerHTML = formData.CourseCode;
+    selectedRow.cells[1].innerHTML = formData.marks;
+    selectedRow.cells[2].innerHTML = formData.credit;
+}
+
+function onDelete(td) {
+    if (confirm('Are you sure to delete this record ?')) {
+        row = td.parentElement.parentElement;
+        document.getElementById("CourseList").deleteRow(row.rowIndex);
+        resetForm();
+    }
+}
+function validate() {
+    isValid = true;
+    if (document.getElementById("CourseCode").value == "") {
+        isValid = false;
+        document.getElementById("CourseCodeValidationError").classList.remove("hide");
+    } else {
+        isValid = true;
+        if (!document.getElementById("CourseCodeValidationError").classList.contains("hide"))
+            document.getElementById("CourseCodeValidationError").classList.add("hide");
+    }
+    return isValid;
+}
+    </script>
+</body>
+
+</html>
