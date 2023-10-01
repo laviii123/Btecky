@@ -1,0 +1,44 @@
+# You are given a matrix, and you need to return the boundary elements of the matrix in a clockwise manner. The matrix is represented as a 2D array, and you need to extract the elements on the outermost layer of the matrix, moving clockwise.
+
+# To solve this problem, you can follow these steps:
+
+Check if the matrix has only one row or one column. If it does, return all the elements in that row or column.
+Otherwise, iterate through the top row, rightmost column, bottom row (if there are more than one row), and leftmost column (if there are more than one column) in a clockwise manner.
+Add each element encountered during the traversal to the result list.
+Return the result list as the boundary elements.
+Here's a Python code snippet to implement this solution:
+
+def boundaryTraversal(matrix, n, m):
+    result = []
+
+    if n == 1:
+        return matrix[0]
+    elif m == 1:
+        return [row[0] for row in matrix]
+    else:
+        # Traverse the top row
+        result.extend(matrix[0])
+
+        # Traverse the rightmost column
+        for i in range(1, n - 1):
+            result.append(matrix[i][m - 1])
+
+        # Traverse the bottom row
+        result.extend(reversed(matrix[n - 1]))
+
+        # Traverse the leftmost column
+        for i in range(n - 2, 0, -1):
+            result.append(matrix[i][0])
+
+    return result
+
+The boundary traversal starts with the top row, then moves to the rightmost column, then the bottom row, and finally the leftmost column, forming a clockwise boundary.
+
+# Output 
+
+1 2 3 4   8            12
+        7 6 7 8   12   11   5
+        11 15 16 15 14   10
+13       14   13 9     4
+
+So, the output is 1 2 3 4 8 12 16 15 14 13 9 5.
