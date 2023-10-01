@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<conio.h>
+#include<iostream>
+using namespace std;
+struct node1
+{
+ int data1;
+ node1 *next1;
+}
+*top1 = NULL, *p1 = NULL, *np1 = NULL;
+struct node2
+{
+ int data2;
+ node2 *next2;
+}
+*top2 = NULL, *p2 = NULL, *np2 = NULL;
+struct node3
+{
+ int data3;
+ node3 *next3;
+}
+*top3 = NULL, *p3 = NULL, *np3 = NULL;
+void push1(int data)
+{
+ np1 = new node1;
+ np1->data1 = data;
+ np1->next1 = NULL;
+ if (top1 == NULL)
+ {
+ top1 = np1;
+ }
+ else
+ {
+ np1->next1 = top1;
+ top1 = np1;
+ }
+}
+int pop1()
+{
+ int b = 999;
+ if (top1 == NULL)
+ {
+ return b;
+ }
+ else
+ {
+ p1 = top1;
+ top1 = top1->next1;
+ return(p1->data1);
+ delete(p1);
