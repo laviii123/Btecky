@@ -1,0 +1,83 @@
+body {    
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+   
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color:rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow added */
+    text-align: center;    
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .input-container {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #result {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  ::before {
+    content: "";
+    background-image: url("./gym1.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 2.2; /* Adjust this value to control the blur effect */
+    filter: blur(2px); /* Adjust this value to control the blur amount */
+    z-index: -1;
+  } 
+  
+  .container {
+    position: relative;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;    
+    background-image: url("./gym1.jpg"); /* Path to your background image */
+    background-size: cover;
+   
+    
+}
+h1{
+  color: darkcyan;
+}
+label{
+  color:crimson;
+  margin-left: 10px;
+  
+}
