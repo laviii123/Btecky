@@ -1,0 +1,24 @@
+import java.sql.*;
+
+public class Demo {
+    public static void main(String[] args) {
+        String sql="select name from employee where id=1";
+        String url="jdbc:mysql://localhost:3306/Employee";
+        String userName="root";
+        String password="Narainox@123";
+
+        try {
+            Connection connection = DriverManager.getConnection(url, userName, password);
+            Statement statement= connection.createStatement();
+//            PreparedStatement statement1=connection.prepareStatement("");
+            ResultSet set = statement.executeQuery(sql);
+            set.next();
+            set.getString(1);
+            connection.close();
+        }
+        catch (Exception exception)
+        {
+            exception.printStackTrace();
+        }
+ }
+}
