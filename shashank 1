@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+
+Node<int> *mergeKLists(vector<Node<int> *> &listArray)
+
+{
+
+    vector<int> ans;
+
+    for (int i = 0; i < listArray.size(); i++)
+    {
+
+        auto a = listArray[i];
+
+        while (a)
+        {
+
+            ans.push_back(a->data);
+
+            a = a->next;
+        }
+    }
+
+    int n = ans.size();
+
+    if (n == 0)
+    {
+
+        return NULL;
+    }
+
+    sort(ans.begin(), ans.end());
+
+    Node<int> *temp = new Node<int>(ans[n - 1]);
+
+    for (int i = n - 2; i >= 0; i--)
+    {
+
+        Node<int> *res = new Node<int>(ans[i]);
+
+        res->next = temp;
+
+        temp = res;
+    }
+
+    return temp;
+}
