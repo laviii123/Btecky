@@ -1,0 +1,41 @@
+#include <stdio.h>
+int main()
+{
+  int a, b, m, n, c, d, k, sum = 0;
+  int one[10][10], two[10][10], multiply[10][10];
+  printf("Enter number of rows and columns of first matrix\n");
+  scanf("%d%d", &a, &b);
+  printf("Enter elements of first matrix\n");
+  for (c = 0; c < a; c++)
+    for (d = 0; d < b; d++)
+      scanf("%d", &one[c][d]);
+  printf("Enter number of rows and columns of second matrix\n");
+  scanf("%d%d", &m, &n);
+  if (b != m)
+    printf("The multiplication isn't possible.\n");
+  else
+  {
+    printf("Enter elements of second matrix\n");
+    for (c = 0; c < m; c++)
+      for (d = 0; d < n; d++)
+        scanf("%d", &two[c][d]);
+    for (c = 0; c < a; c++) {
+      for (d = 0; d < n; d++) {
+        for (k = 0; k < m; k++) {
+          sum = sum + one[c][k]*two[k][d];
+        }
+ 
+        multiply[c][d] = sum;
+        sum = 0;
+      }
+    }
+    printf("Product of the matrices:\n");
+    for (c = 0; c < a; c++) {
+      for (d = 0; d < n; d++)
+        printf("%d\t", multiply[c][d]);
+ 
+      printf("\n");
+    }
+  }
+  return 0;
+}
