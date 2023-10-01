@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+       <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="shortcut icon" href="menu.gif" type="image/gif">
+    <link rel="stylesheet" href="style.css">
+           
+</head>
+<body>  
+    <nav id = "destop-nav">
+        <div class="row">
+            <div id="name" class="logo  col-lg-6">
+            <h1 > Hariom Dhage</h1>
+            </div>
+           
+       <div class="nav-links  col-lg-6">
+        <li><a href="" >About</a></li>
+        <li><a href="" >Experience</a></li>
+        <li><a href="" >Project</a></li>
+        <li><a href="" >Contact</a></li>
+       </div>
+       </div>
+    </nav>
+    <section id="profile">
+        <div class="section-pic-container">
+            <img src="./assets/profile-pic.png" alt="profile-pic" class="pic" >
+
+        </div>
+        <div class="section-text">
+            <p class="sectiom-text-p1">Hello I'm</p>
+            <h1 class="title">Hariom Dhage</h1>
+            <p class="sectiom-text-p2">Frontend Developer</p>
+        <div class="button-container">
+            <button class="btn btn-outline-primary" onclick="window.open('./assets/RESUME.pdf')"> Download CV</button>
+            <button  class="btn btn-outline-primary" >Contact Info</button>
+
+             <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        <label class="menu-open-button" for="menu-open">
+         <span class="lines line-1"></span>
+         <span class="lines line-2"></span>
+         <span class="lines line-3"></span>
+       </label>
+     
+        <a href="#" class="menu-item blue"><i class="ri-linkedin-fill"></i></a>
+        <a href="#" class="menu-item green"><i class="ri-whatsapp-fill"></i></a>
+        <a href="#" class="menu-item red"><i class="ri-pinterest-fill"></i></a>
+        <a href="#" class="menu-item purple"><i class="ri-instagram-fill"></i></a>
+        <a href="#" class="menu-item orange"><i class="ri-github-fill"></i></a>
+        <a href="#" class="menu-item lightblue"><i class="ri-facebook-circle-fill"></i></a>
+     </nav>
+        </div>
+        <div class="social-links">
+            <img src="./assets/github.png" alt="" class="icon">
+            <img src="./assets/linkedin.png" alt="" class="icon">
+
+        </div>
+
+        </div>
+    </section>
+    <section id="About-us">
+        <p class="section-heading">Get to know more</p>
+        <h1 class="title" >About me</h1>
+        <div class="section-container">
+            <div class="section-pic-container">
+
+                <img src="./assets/about-pic.png" alt="about-pic" class="pic">
+            </div>
+        
+        <div class="section-details-container">                 
+            <div class="about-container">
+                <div class="details-container">
+                    <img src="./assets/experience.png" class="icon">
+                    <h1>Experience</h1>
+                    <p>2+years</p>
+                    <p>Frontend Developer</p>
+                    
+                </div>
+
+            
+            <div class="details-container"> 
+                <img src="./assets/experience.png" class="icon">
+                    <h1>Experience</h1>
+                    <p>2+years</p>
+                    <p>Frontend Developer</p>
+               
+            </div>         
+            
+        </div>
+    </section>    
+</body>
+</html>
+
+
+
+CSS CODE:_
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:ital,wght@1,100&display=swap');
+*{
+    margin: 0;
+    
+    
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    height: 17vh;
+   /* background-color: rgb(255, 157, 0);*/
+    background-image: url(./assets/pexels-magda-ehlers-1279813.png);
+
+}
+
+
+
+.nav-links{
+
+    
+
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+.a{
+    justify-content: flex-end;
+    color: black;
+    text-decoration: none;
+}
+.a:hover{
+    
+    color: green;
+}
+.section{
+
+height: 27vh;
+width: auto;
+}
+.pic{
+
+    height: 200px;
+    width: 200px;
+    
+}
+#profile{
+   display: flex;  
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-image: url(./assets/Screenshot\ 2023-08-24\ 002543.png);
+
+}
+
+.sectiom-text-p1{
+
+    font-size: 20px;
+    justify-content: center;
+}
+.title{
+    font-size: 40px;
+}
+.section-text-p2{
+    font-size: 20px;
+    margin-bottom: 0.2rem;
+
+}
+.btn{
+    padding: 0.5rem;
+    font-weight: 400;
+    border-radius: 1rem;
+
+}
+.icon{
+    cursor: pointer;
+    height: 2rem;
+
+
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.3rem;
+}
+.social-links{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+}
+.section-heading{
+    margin-top: 10rem;
+    text-align: center;
+    
+}
+.title{
+    text-align: center;
+}
+.section-text{
+    margin-top: 2rem;
+}
+.section-container{
+    display: flex;
+    margin:0 10rem;
+}
+.section-pic-container{
+    margin-left: 10rem;
+}
+.about-container{
+    display: flex;
+}
+
+.details-container{
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 2rem;
+    margin-left: 2rem;
+    
+
+}
+.section-details-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10rem;
+
+}
+.section-container{
+    display: flex;
+}
+
+html {
+    min-height: 100%;
+    background-image: url(./assets/Screenshot\ 2023-08-24\ 002543.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
