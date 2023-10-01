@@ -1,0 +1,35 @@
+//Its mainly use in election like in college or national election etc
+import java.util.HashMap;
+import java.util.Map;
+
+public class ElectionLeader {
+
+    public static String findElectionLeader(String[] votes) {
+        Map<String, Integer> voteCounts = new HashMap<>();
+
+        // Count the votes 
+        for (String vote : votes) {
+            voteCounts.put(vote, voteCounts.getOrDefault(vote, 0) + 1);
+        }
+
+        String leader = "";
+        int maxVotes = 0;
+
+        // Find the leader with the maximum votes
+        for (Map.Entry<String, Integer> entry : voteCounts.entrySet()) {
+            if (entry.getValue() > maxVotes) {
+                maxVotes = entry.getValue();
+                leader = entry.getKey();
+            }
+        }
+
+        return leader;
+    }
+
+    public static void main(String[] args) {
+        String[] votes = {"Harsh", "Binal", "Harsh", "Abhishek", "Lavish", "Harsh", "Nitin", "Hemi"};
+        String leader = findElectionLeader(votes);
+
+        System.out.println("The leader of the election is: " + leader);
+    }
+}
