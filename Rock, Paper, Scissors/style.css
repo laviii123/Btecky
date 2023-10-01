@@ -1,0 +1,44 @@
+.container-1
+{
+    border: 1px solid black;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto; 
+    padding: 10px;
+}
+
+.flexbox-container-1
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    margin: 30px;
+}
+
+.flexbox-container-1 img
+{
+    width: 18%;
+    background-color: white;
+    rotate: -90deg;
+    padding: 10px;
+    border: 5px solid black;
+    border-radius: 50%;
+}
+
+.flexbox-container-1 div
+{
+    text-align: center;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
+    margin: 0 auto;
+    padding: 10px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flexbox-container-1 img:hover
+{
+    box-shadow: rgba(81, 0, 255, 0.56) 0px 22px 70px 4px;
+}
