@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Checker</title>
+</head>
+<body>
+    <h1>Weather Checker</h1>
+    <label for="city">Enter City:</label>
+    <input type="text" id="city" placeholder="Enter city name">
+    <button onclick="getWeather()">Check Weather</button>
+    
+    <div id="weather-info">
+        <!-- Weather data will be displayed here -->
+    </div>
+
+    <script>
+        function getWeather() {
+            const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+            const city = document.getElementById('city').value;
+            const weatherInfo = document.getElementById('weather-info');
+
+            if (city === '') {
+                alert('Please enter a city name.');
+                return;
+            }
+
+            // Make an API request to OpenWeatherMap
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.cod === '404') {
+                        weatherInfo.innerHTML = 'City not found';
+                    } else {
+                        const weatherDescription = data.weather[0].description;
+                        const temperature = (data.main.temp - 273.15).toFixed(2); // Convert temperature to Celsius
+
+                        const html = `
+                            <p>Weather in ${data.name}, ${data.sys.country}: ${weatherDescription}</p>
+                            <p>Temperature: ${temperature} &#8451;</p>
+                            <p>Humidity: ${data.main.humidity}%</p>
+                            <p>Wind Speed: ${data.wind.speed} m/s</p>
+                        `;
+
+                        weatherInfo.innerHTML = html;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    weatherInfo.innerHTML = 'An error occurred while fetching weather data.';
+                });
+        }
+    </script>
+</body>
+</html>
