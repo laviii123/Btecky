@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+#define int long long
+#define double long double
+#define pii pair<int, int> 
+#define pb push_back
+#define inf 1e18
+using namespace std;
+const int mod=1e9+7;
+const int N=1e6+10;
+
+
+
+int fun(int pos, vector<int> temp, int p, int k, vector<vector<int>>& vec, map<pair<int, vector<int>>, int>& dp){
+	if(pos>=vec.size()){
+		for(int i=1;i<=k;i++){
+			if(temp[i]<p) return inf;
+		}
+		return 0;
+	}
+	if(dp.find({pos,temp})!=dp.end()) return dp[{pos,temp}];
+	int ans=fun(pos+1,temp,p,k,vec,dp);
+	vector<int> temp1=temp;
+	
+	for(int i=1;i<vec[pos].size();i++){
+		temp1[i]+=vec[pos][i];
+		temp1[i]=min(p,temp1[i]);
+	}
+	ans = min(ans, vec[pos][0]+fun(pos+1,temp1,p,k,vec,dp));
+
+	return dp[{pos,temp}]=ans;
+}
+
+void solve(){
+	int n,k,p;
+	cin>>n>>k>>p;
+	vector<vector<int>> vec(n, vector<int>(k+1));
+	for(int i=0;i<n;i++){
+		// cin>>vec[i][0];
+		for(int j=0;j<=k;j++){
+			cin>> vec[i][j];
+		}
+	}
+	map<pair<int, vector<int>>, int> dp;
+	vector<int> temp(k+1,0);
+	int ans=fun(0,temp,p,k,vec,dp);
+	if(ans>=inf){
+		cout<<-1<<"\n";
+	}
+	else cout<<ans<<"\n";
+}
+
+int32_t main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+ 
+		solve();
+}
