@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style type="text/css">
+
+		body{
+			padding: 0;
+			margin: 0;
+			background-color: #113951;
+		}
+
+		.container{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			background: linear-gradient(#286287,#020e1a);
+		    padding: 1rem;
+		    border-radius: 10px;
+		}
+		.buttons{
+			display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    margin: 1rem 0;
+		}
+		
+      .main{
+      	width: 500px;
+      	height: 500px;
+      	background-color: pink;
+      	border: 1px solid red;
+      	padding: 20px;
+      }
+      [type="button"]{
+     	color: #9b9595;
+	    font-size: 20px;
+	    font-weight: bold;
+	    outline: none;
+	    text-align: center;
+	    border: 1px solid black;
+	    border-radius: 5px;
+	    width: 40px;
+	    height: 40px;
+	    background-color: black;
+
+      }
+       [type="button"]:focus{
+        box-shadow: 0 0 10px #eee,0 0 30px #eee,0 0 10px #eee;
+   
+       }
+      [type="button"]:hover{
+      	cursor: pointer;
+      }
+      #ans{
+      	width: 200px;
+	    height: 70px;
+	    color: white;
+	    margin-bottom: 20px;
+	    font-size: 25px;
+	    outline: none;
+	    text-align: right;
+	    background: transparent;
+      }
+      
+
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<div name="main">
+
+
+		<input id="ans" type="text" name="output" readonly>
+
+		<div class="buttons">
+			<input type="button" value="C" onclick=" ans.value='' ; ">
+			<input id="b()" type="button" value="()" onclick="toggleBraces()">
+			<input id="b%" type="button" value="%" onclick="getval(value)">
+			<input id="back" type="button" onclick="back()" value="&#8592;">
+		</div>
+
+		<div class="buttons">
+			<input id="b7" type="button" value="7" onclick="getval(value)">
+			<input id="b8" type="button" value="8" onclick="getval(value)">
+			<input id="b9" type="button" value="9" onclick="getval(value)">
+			<input id="b*" type="button" value="*" onclick="getval(value)">
+		</div>
+		
+
+
+		<div class="buttons">
+			<input id="b4" type="button" value="4" onclick="getval(value)">
+			<input id="b5" type="button" value="5" onclick="getval(value)">
+			<input id="b6" type="button" value="6" onclick="getval(value)">
+			<input id="b-" type="button" value="-" onclick="getval(value)">
+		</div>
+			
+
+		<div class="buttons">
+			<input id="b1" type="button" value="1" onclick="getval(value)">
+			<input id="b2" type="button" value="2" onclick="getval(value)">
+			<input id="b3" type="button" value="3" onclick="getval(value)">
+			<input id="b+" type="button" value="+" onclick="getval(value)">
+		</div>
+		
+		<div class="buttons">
+			<input id="b." type="button" value="." onclick="getval(value)">
+			<input id="b0" type="button" value="0" onclick="getval(value)">
+			<input id="b/" type="button" value="/" onclick="getval(value)">
+			<input type="button" value="=" onclick="calculate()">
+		</div>
+				
+		
+
+	</div>
+
+</div>
+	<script type="text/javascript">
+		//this function gets parameter value which is value of that button
+		function getval(value){
+			var result=document.getElementById('ans');
+
+			//here we are fetching id of the clicked button which is b+value of that button
+			var buttonClicked=document.getElementById('b'+value);
+			//append value on result box according to button clicked by user
+			result.value+=buttonClicked.value;
+		
+		
+
+		}
+		//this function calculate answer of the input given input box
+		function calculate(){
+
+			var result=document.getElementById('ans');
+			// if user does not enter any value to calculate and press = directly then we should assign textbox value as zero otherwise it will show undefined 
+			if(result.value==""){
+				result.value="0";
+			}
+			//eval method executes the expression and returns result
+			result.value=eval(result.value);
+
+		}
+
+		//this function clear the input text box when user click on clear
+		function clear(){
+			var result=document.getElementById('ans');
+			result.value=" ";
+		
+		}
+		
+		//this function clear last input from text box 
+		function back()
+		{
+			var result=document.getElementById('ans');
+			var str=result.value;
+			//using substr method we can get substring from string
+			var sub=str.substr(0,(str.length-1));
+			result.value=sub;
+		}
+		var openBrace=true;
+		
+		function toggleBraces(){
+
+		    var result=document.getElementById('ans');
+		    if(openBrace){
+		    	result.value+="(";
+		    	openBrace=false;
+		    }
+		    else{
+				result.value+=")";
+		    	openBrace=true;
+	    	}
+
+		    }
+
+
+	</script>
+		
+</body>
+</html>
