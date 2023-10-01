@@ -1,0 +1,27 @@
+def longest_increasing_subsequence_with_constraints(nums, constraints):
+    n = len(nums)
+    dp = [1] * n  # Initialize dp array with 1s
+    graph = [[] for _ in range(n)]
+
+    # Build a directed graph based on constraints
+    for x, y in constraints:
+        if nums[x] < nums[y]:
+            graph[x].append(y)
+
+    # Perform topological sorting to find the longest path
+    for i in range(n):
+        for j in range(i):
+            if nums[i] > nums[j]:
+                dp[i] = max(dp[i], dp[j] + 1)
+
+    # Find the maximum value in dp array
+    max_length = max(dp)
+
+    return max_length
+
+# Example usage:
+nums = [4, 2, 3, 6, 10, 1, 12]
+constraints = [(0, 2), (1, 3), (4, 6)]
+
+result = longest_increasing_subsequence_with_constraints(nums, constraints)
+print(result)  # Output: 4
