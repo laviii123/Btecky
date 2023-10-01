@@ -1,0 +1,71 @@
+import heapq
+
+class Node:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.g = float('inf')
+        self.h = 0
+        self.f = 0
+        self.parent = None
+
+    def __lt__(self, other):
+        return self.f < other.f
+
+def astar(grid, start, end):
+    rows, cols = len(grid), len(grid[0])
+    open_set = []
+    closed_set = set()
+
+    start_node = Node(start[0], start[1])
+    end_node = Node(end[0], end[1])
+
+    heapq.heappush(open_set, start_node)
+
+    while open_set:
+        current_node = heapq.heappop(open_set)
+        closed_set.add(current_node)
+
+        if current_node == end_node:
+            path = []
+            while current_node:
+                path.append((current_node.x, current_node.y))
+                current_node = current_node.parent
+            return path[::-1]
+
+        neighbors = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        for dx, dy in neighbors:
+            neighbor_x, neighbor_y = current_node.x + dx, current_node.y + dy
+
+            if (
+                neighbor_x < 0
+                or neighbor_x >= rows
+                or neighbor_y < 0
+                or neighbor_y >= cols
+                or grid[neighbor_x][neighbor_y] == 1
+            ):
+                continue
+
+            neighbor_node = Node(neighbor_x, neighbor_y)
+            if neighbor_node in closed_set:
+                continue
+
+            tentative_g = current_node.g + 1  # Assuming uniform cost for all edges
+
+            if neighbor_node not in open_set or tentative_g < neighbor_node.g:
+                neighbor_node.g = tentative_g
+                neighbor_node.h = abs(neighbor_x - end[0]) + abs(neighbor_y - end[1])
+                neighbor_node.f = neighbor_node.g + neighbor_node.h
+                neighbor_node.parent = current_node
+
+                if neighbor_node not in open_set:
+                    heapq.heappush(open_set, neighbor_node)
+
+    return None
+
+# Example usage:
+grid = [
+    [0, 0, 0, 0, 0],
+    [0, 1, 1, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0
