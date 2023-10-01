@@ -1,0 +1,32 @@
+class CeilSqrt{
+    public static void main(String args[]){
+        int x=25;
+
+        long ans=binarysearch(x);
+        System.out.println(ans);
+    }
+
+    static int binarysearch(int x){
+     int start=1;
+     int end=x;
+     
+     while(start<=end){
+        long mid = start+(end-start)/2;
+
+        long val=mid*mid;
+        
+        if(val==x){
+            return (int)mid+1;
+        }
+
+        else if(val<x){
+            start=(int)mid+1;
+        }
+
+        else{
+            end=(int)mid-1;
+        }
+     }
+     return start;
+    }
+}
