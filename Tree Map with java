@@ -1,0 +1,30 @@
+
+import java.util.Map;
+import java.util.TreeMap;
+public class Key implements Comparable<Key> {
+	final int data = 118;
+	private String key;
+	public Key(String key)
+	{
+		super();
+		this.key = key;
+	}
+	public String printKey() { return this.key; }
+	@Override public int compareTo(Key obj)
+	{
+		return key.compareTo(obj.key);
+	}
+}
+class GFG {
+	public static void main(String[] args)
+	{
+		Map<Key, String> treemap = new TreeMap<>();
+		treemap.put(new Key("Key1"), "Alice");
+		treemap.put(new Key("Key4"), "Zeya");
+		treemap.put(new Key("Key3"), "Geek");
+		treemap.put(new Key("Key2"), "Bob");
+		for (Map.Entry<Key, String> entry :
+			treemap.entrySet())
+			System.out.println("[" + entry.getKey().printKey() + " = "+ entry.getValue() + "]");
+	}
+}
