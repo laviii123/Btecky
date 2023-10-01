@@ -1,0 +1,46 @@
+class InfiniteBinarySearch {
+    public static void main(String args[]) {
+        int arr[] = { 3, 5, 7, 9, 10, 90, 100, 130, 140, 150, 160, 170 };
+        int target = 100;
+
+        int ans = findans(arr, target);
+        System.out.println(ans);
+    }
+
+    static int findans(int arr[], int target) {
+        int start = 0;
+        int end = 1;
+
+        // Expand the search range while the target is greater than the current end
+        while (target > arr[end]) {
+            int newStart = end + 1;
+            int nextEnd = end + (end - start + 1) * 2;
+
+            // Check if nextEnd is within the bounds of the array
+            if (nextEnd >= arr.length) {
+                end = arr.length - 1;  // Adjust end to the last index of the array
+            } else {
+                end = nextEnd;
+            }
+
+            start = newStart;
+        }
+
+        return Binarysearch(arr, target, start, end);
+    }
+
+    static int Binarysearch(int arr[], int target, int start, int end) {
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            if (target > arr[mid]) {
+                start = mid + 1;
+            } else if (target < arr[mid]) {
+                end = mid - 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
+    }
+}
