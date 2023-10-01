@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISCORD CLONE</title>
+
+    <!-- FONTAWESOME-KIT -->
+    <script src="https://kit.fontawesome.com/e4ed3a6ecf.js" crossorigin="anonymous"></script>
+
+    <!-- EXTERNAL-CSS-FILE -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE-FONT-NOTO-SANS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap" rel="stylesheet">
+
+<!-- GOOGLE-FONT-POPPINS -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <div class="header" style="overflow: hidden;">
+        <nav class="navigation">
+            <div class="logo"><img src="images/discord.svg" alt=""></div>
+            <div class="links">
+                <ul class="unlist">
+                    <li><a href="">Download</a></li>
+                    <li><a href="">Nitro</a></li>
+                    <li><a href="">Discover</a></li>
+                    <li><a href="">Safety</a></li>
+                    <li><a href="">Support</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">careers</a></li>
+                </ul>
+            </div>
+            <div class="login"><button class="logintype">Login</button></div>
+        </nav>
+        <div class="bottomheader">
+            <div class="1stimage"><img src="Images/topleft.svg" alt="" class="topleft" height="270px" style="margin-top:137px; margin-left:160px; margin-bottom: 18px;"></div>
+            <div class="wholetext">
+                <div class="headtext"><p class="headtextt">IMAGINE A PLACE...</p></div>
+                <div><p class="long">&nbsp;...where you can belong to a school club, a gaming group, or a worldwide art community.&nbsp;<br>Where just you and a handful of friends can spend time together. A place that makes it easy<br> <span class="lasttext">to talk every day and hang out more often.</span></p></div>
+                <div class="boundary">
+                    <div><button class="do">Download For Windows</button></div>
+                    <div><button class="op">Open Discord In Your Browser</button></div>
+                </div>
+            </div>
+            <div class="2ndimage"><img src="Images/topright.svg" alt="" style="height: 300px; margin-top: 108px;"></div>
+        </div>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="middle">
+<div class="one">
+    <div><img src="Images/pic1.svg" alt=""></div>
+    <div class="texts">
+        <p class="heading">Create an invite-only place where you belong</p><br>
+        <p class="smalltext">Discord servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</p>
+    </div>
+</div>    
+
+<div class="two">
+    <div class="texts">
+    <p class="heading">Where hanging out is easy</p>
+    <p class="smalltext">Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.</p>
+</div>
+    <div><img src="Images/pic2.svg" alt=""></div>
+</div>
+<div class="three">
+    <div><img src="Images/pic3.svg" alt=""></div>
+    <div class="texts">
+        <p class="heading">From few to a fandom</p>
+        <p class="smalltext">Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.</p>
+    </div>
+</div>
+<div class="four">
+    <div class="textss">
+        <p class="headingg">RELIABLE TECH FOR STAYING CLOSE</p>
+        <p class="smalltextt">Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.</p>
+    </div>
+    <div class="twoo"><img src="Images/pic4.svg" alt="" class="lasti"></div>
+    <div class="threee"><img src="Images/star.svg" alt="" class="stars"><p class="ready">Ready to start your journey?
+    </p></div>
+    <button class="buttonn"><i class="fa-solid fa-download"></i>&nbsp Download For Windows</button>
+</div>
+
+</div>
+
+
+    <!-- FOOTER -->
+
+<div class="footer">
+    <div class="upper">
+        <div class="bakc">
+            <p class="thick">IMAGINE A<br>PLACE</p>
+            <img src="Images/americaflag.png" alt="" style="height:16px; width: 24px;">
+            <p class="usa">Eng,USA</p>
+
+            <ul class="unlist">
+                <li><a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube fa-2x"></i></a></li>
+            </ul>
+        </div>
+            <div class="product">
+                <p class="subproduct" style="font-family: sans-serif;">Product</p>
+                <a href="#" class="nitro"><p>Download</p></a>
+                <a href="#" class="nitro"><p>Nitro</p></a>
+                <a href="#" class="nitro"><p>Status</p></a>
+            </div>
+            <div class="company">
+                <p class="subproduct" style="font-family: sans-serif;">Company</p>
+                <a href="#" class="nitro"><p>About</p></a>
+                <a href="#" class="nitro"><p>Jobs</p></a>
+                <a href="#" class="nitro"><p>Branding</p></a>
+                <a href="#" class="nitro"><p>News</p></a>
+            </div>
+            <div class="resources">
+                <p class="subproduct" style="font-family: sans-serif;">Resources</p>
+                <a href="#" class="nitro"><p>College</p></a>
+                <a href="#" class="nitro"><p>Support</p></a>
+                <a href="#" class="nitro"><p>Safety</p></a>
+                <a href="#" class="nitro"><p>Blog</p></a>
+                <a href="#" class="nitro"><p>Feedback</p></a>
+                <a href="#" class="nitro"><p>Developers</p></a>
+                <a href="#" class="nitro"><p>Streamkit</p></a>
+                <a href="#" class="nitro"><p>Creators</p></a>
+                <a href="#" class="nitro"><p>Community</p></a>
+            </div>
+            <div class="policies">
+                <p class="subproduct" style="font-family: sans-serif;">Policies</p>
+                <a href="#" class="nitro"><p>Terms</p></a>
+                <a href="#" class="nitro"><p>Privacy</p></a>
+                <a href="#" class="nitro"><p>Cookie settings</p></a>
+                <a href="#" class="nitro"><p>Guidelines</p></a>
+                <a href="#" class="nitro"><p>Acknowledgements</p></a>
+                <a href="#" class="nitro"><p>Licenses</p></a>
+                <a href="#" class="nitro"><p>Moderation</p></a>
+            </div>
+    </div>
+    <hr style="border-color: rgb(76, 0, 255);">
+    <div class="lower">
+        <div class="foot-logo"><img src="Images/discord.svg" alt=""></div>
+        <div class="foot-signup"><button class="lasstt">Sign up</button></div>
+    </div>
+</div>
+
+</body>
+</html>
