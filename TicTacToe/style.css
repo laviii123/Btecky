@@ -1,0 +1,126 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --border-clr: rgba(255, 255, 255, 0.25);
+    --bg-clr: rgba(255, 255, 255, 0.15);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    color: var(--white);
+    background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+    display: grid;
+    place-items: center;
+    align-items: start;
+}
+
+.app-name {
+    font-size: 4.5rem;
+    align-self: center;
+    padding-bottom: 3rem;
+}
+
+
+.game-info {
+    border: 1px solid var(--border-clr);
+    padding: 0.8rem 4.8rem;
+    border-radius: 1.6rem;
+    background-color: var(--bg-clr);
+    backdrop-filter: blur(7px);
+}
+
+.game {
+    width: 90%;
+    max-width: 32rem;
+    aspect-ratio: 1/1;
+    background-color: var(--bg-clr);
+    border: 1px solid var(--border-clr);
+    border-radius: 1.6rem;
+    backdrop-filter: blur(7px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3.2rem;
+}
+
+.box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    font-size: 4.8rem;
+    cursor: pointer;
+    transition: all 150ms ease-in-out 0s;
+}
+
+.box-1,
+.box-2,
+.box-4,
+.box-5 {
+    border-bottom: 2px solid var(--white);
+    border-right: 2px solid var(--white);
+}
+
+.box-3,
+.box-6 {
+    border-bottom: 2px solid var(--white);
+}
+
+.box-7,
+.box-8 {
+    border-right: 2px solid var(--white);
+}
+
+/* new game button */
+.new-game-btn {
+    color: var(--white);
+    background-color: var(--bg-clr);
+    border: none;
+    border: 1px solid var(--border-clr);
+    border-radius: 1.6rem;
+    padding: 0.8rem 3.2rem;
+    backdrop-filter: blur(7px);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    text-transform: capitalize;
+    transition: all 150ms ease-in-out;
+}
+
+.new-game-btn.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.win {
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+@media (max-width: 350px) {
+    .box {
+        font-size: 4rem;
+    }
+
+    .app-name {
+        font-size: 3.5rem;
+    }
+}
