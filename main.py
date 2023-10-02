@@ -1,42 +1,61 @@
-import cv2
-import mediapipe as mp
-import pyautogui
-cap = cv2.VideoCapture(0)
-hand_detector = mp.solutions.hands.Hands()
-drawing_utils = mp.solutions.drawing_utils
-screen_width, screen_height = pyautogui.size()
-index_y=0
-while True:
-    _, frame = cap.read()
-    frame = cv2.flip(frame,1)
-    frame_hight, frame_width,_ = frame.shape
-    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    output = hand_detector.process(rgb_frame)
-    hands = output.multi_hand_landmarks
-    if hands:
-        for hand in hands:
-            drawing_utils.draw_landmarks(frame, hand)
-            landmarks = hand.landmark
-            for id,landmark in enumerate(landmarks):
-                x = int(landmark.x*frame_width)
-                y = int(landmark.y*frame_hight)
-                if id == 8:
-                    cv2.circle(img=frame, center=(x,y), radius=30,color=(0, 255, 255))
-                    index_x = screen_width/frame_width*x
-                    index_y = screen_height/frame_hight*y
-                    pyautogui.moveTo(index_x, index_y)
-                if id == 4:
-                    cv2.circle(img=frame, center=(x,y), radius=30,color=(0, 255, 255))
-                    thumb_x = screen_width/frame_width*x
-                    thumb_y = screen_height/frame_hight*y
-                    print('outside', abs(index_y-thumb_y))
-                    if abs(index_y-thumb_y) < 80:
-                        pyautogui.click()
-                        pyautogui.sleep(1)
-                print(x,y)
-
-    cv2.imshow('My Own Virtual Mouse',frame)
-    if cv2.waitKey(1)==27:
-        break
+from turtle import Turtle, Screen
+from paddle import Paddle
+from ball import Ball
+import time 
 
 
+
+screen = Screen()
+screen.setup(900, 600)
+screen.bgcolor("black")
+screen.title("This is Harsh's Ping-Pong Game")
+screen.tracer(0)
+
+l_paddle = Paddle((-410,0))
+r_paddle = Paddle((410,0))
+ball = Ball()
+
+
+
+
+screen.listen()
+screen.onkey(r_paddle.go_up, "Up")
+screen.onkey(r_paddle.go_down, "Down")
+
+screen.onkey(l_paddle.go_up, "w")
+screen.onkey(l_paddle.go_down, "s")
+
+game_is_on = True
+while game_is_on:
+    time.sleep(0.1)
+    ball.move()
+    screen.update()
+
+    ## Detect the colision with wall
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        ball.bounce_y()
+
+    ## Detect the colision with paddle
+    if ball.distance(r_paddle) < 50 and ball.xcor() > 390 or ball.distance(l_paddle) < 50 and ball.xcor() > -390:
+        ball.bounce_x()
+
+    ## Detect R paddle misses
+    if ball.xcor() > 420:
+        ball.reset_position()   
+
+    ## Detect L paddle misses
+    if ball.xcor() < -420:
+        ball.reset_position()   
+
+
+
+
+
+
+
+
+
+
+
+
+screen.exitonclick()
