@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style src="style.css"></style>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .dark{
+            background:black;
+            color: white;
+        }
+        .dark input{
+            background-color: black;
+            color: white;
+        }
+        .dk-mode:hover{
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+        }
+        .dk-mode{
+            position: absolute;
+            right: 50px;
+            top: 10px;
+            padding: 10px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        .section1-c0tainer{
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            margin: 45px auto;
+        }
+        .flex{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .input{
+            width: 100%;
+            color: black;
+            background-color: white;
+            height:35px;
+            border: none;
+        }
+        .row{
+            padding: 2px;
+            border: 2px solid whitesmoke;
+        }
+        .row div:hover{
+            color: red;
+            background: whitesmoke;
+        }
+        .row div{
+            border-radius:20px;
+            cursor: pointer;
+            text-align: center;
+            margin: 5px;
+            padding: 15px;
+            border: 1px solid gainsboro;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="dar"> 
+    <button onclick="dark()" id="btn-mode" class="dk-mode">Dark mode</button>
+    <div class="section1">
+        <div class="container  section1-c0tainer">
+            <div class="input-div row">
+                <input id="input" class="input" type="text" placeholder="Enter Expression : ">
+            </div>
+            <div class="row flex">
+                <div class="buttons">C</div>
+                <div class="buttons">%</div>
+                <div class="buttons">cut</div>
+                <div class="buttons">/</div>
+            </div>
+            <div class="row flex">
+                <div class="buttons">7</div>
+                <div class="buttons">8</div>
+                <div class="buttons">9</div>
+                <div class="buttons">*</div>
+            </div>
+            <div class="row flex">
+                <div class="buttons">4</div>
+                <div class="buttons">5</div>
+                <div class="buttons">6</div>
+                <div class="buttons">-</div>
+            </div>
+            <div class="row flex">
+                <div class="buttons">1</div>
+                <div class="buttons">2</div>
+                <div class="buttons">3</div>
+                <div class="buttons">+</div>
+            </div>
+            <div class="row flex">
+                <div class="buttons">00</div>
+                <div class="buttons">0</div>
+                <div class="buttons">.</div>
+                <div class="buttons">=</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

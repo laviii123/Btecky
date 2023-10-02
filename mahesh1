@@ -1,0 +1,134 @@
+//Hotels room booking and order food system in c language
+
+#include <stdio.h>
+#include <stdbool.h>
+#define NUM_ROOMS 10
+#define MAX_ITEMS 5
+
+void initializeRooms(int roomNumbers[], bool isBooked[], int numRooms) {
+	int i;
+    for (i = 0; i < numRooms; i++) {
+        roomNumbers[i] = i + 1;
+        isBooked[i] = false;
+    }
+}
+
+void displayRooms(int roomNumbers[], bool isBooked[], int numRooms) {
+	int i;
+    printf("Room Status:\n");
+    for (i = 0; i < numRooms; i++) {
+        printf("Room %d: %s\n", roomNumbers[i], isBooked[i] ? "Booked" : "Available");
+    }
+}
+
+void bookRoom(int roomNumbers[], bool isBooked[], int numRooms, int roomNumber) {
+    if (roomNumber < 1 || roomNumber > numRooms) {
+        printf("Invalid room number.\n");
+        return;
+    }
+
+    if (isBooked[roomNumber - 1]) {
+        printf("Room %d is already booked.\n", roomNumber);
+    } else {
+        isBooked[roomNumber - 1] = true;
+        printf("Room %d has been booked.\n", roomNumber);
+    }
+}
+
+void displayMenu(char *items[], float prices[], int numItems) {
+	int i;
+    printf("Menu:\n");
+    for (i = 0; i < numItems; i++) {
+        printf("%d. %s - $%.2f\n", i + 1, items[i], prices[i]);
+    }
+}
+
+float calculateTotal(float prices[], int quantities[], int numItems) {
+    float total = 0;
+    int i;
+    for (i = 0; i < numItems; i++) {
+        total += prices[i] * quantities[i];
+    }
+    return total;
+}
+
+int main() {
+    int roomNumbers[NUM_ROOMS];
+    bool isBooked[NUM_ROOMS];
+    initializeRooms(roomNumbers, isBooked, NUM_ROOMS);
+
+    char *menuItems[MAX_ITEMS] = {"Burger", "Pizza", "Pasta", "Salad", "Fries"};
+    float itemPrices[MAX_ITEMS] = {5.99, 8.99, 6.49, 4.99, 2.99};
+    int quantities[MAX_ITEMS] = {0};
+
+    int numRooms = sizeof(roomNumbers) / sizeof(roomNumbers[0]);
+    int numItems = sizeof(menuItems) / sizeof(menuItems[0]);
+
+    int choice;
+	int roomNumber, quantity;
+
+    do {
+        printf("\nHotel Management and Order System\n");
+        printf("1. Room Management\n");
+        printf("2. Order Food\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("\nRoom Management\n");
+                printf("1. Display Room Status\n");
+                printf("2. Book a Room\n");
+                printf("Enter your choice: ");
+                scanf("%d", &choice);
+
+                switch (choice) {
+                    case 1:
+                        displayRooms(roomNumbers, isBooked, numRooms);
+                        break;
+                    case 2:
+                        printf("Enter the room number to book: ");
+                        scanf("%d", &roomNumber);
+                        bookRoom(roomNumbers, isBooked, numRooms, roomNumber);
+                        break;
+                    default:
+                        printf("Invalid choice. Please try again.\n");
+                }
+                break;
+            case 2:
+                printf("\nHotel Order System\n");
+                displayMenu(menuItems, itemPrices, numItems);
+                printf("%d. Checkout\n", numItems + 1);
+                printf("Enter your choice: ");
+                scanf("%d", &choice);
+
+                if (choice >= 1 && choice <= numItems) {
+                    printf("Enter the quantity for %s: ", menuItems[choice - 1]);
+                    scanf("%d", &quantity);
+                    quantities[choice - 1] += quantity;
+                } else if (choice == numItems + 1) {
+                    float total = calculateTotal(itemPrices, quantities, numItems);
+                    printf("\nReceipt:\n");
+                    int i;
+                    for (i = 0; i < numItems; i++) {
+                        if (quantities[i] > 0) {
+                            printf("%s x%d - $%.2f\n", menuItems[i], quantities[i], itemPrices[i] * quantities[i]);
+                        }
+                    }
+                    printf("Total: $%.2f\n", total);
+                printf("Thank you for your order!\n");
+                } else {
+                    printf("Invalid choice. Please try again.\n");
+                }
+                break;
+            case 3:
+                printf("Exiting the program.\n");
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 3);
+
+    return 0;
+}

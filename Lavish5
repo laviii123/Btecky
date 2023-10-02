@@ -1,0 +1,43 @@
+public class OrderAgnosticBinarySearch {
+    public static void main(String[] args) {
+        int arrAscending[] = {-18, -12, -4, 0, 2, 3};
+        int targetAscending = -12;
+        int resultAscending = orderAgnosticBinarySearch(arrAscending, targetAscending);
+        System.out.println("Ascending Order Result: " + resultAscending);
+
+        int arrDescending[] = {20, 15, 10, 7, 5, 2};
+        int targetDescending = 10;
+        int resultDescending = orderAgnosticBinarySearch(arrDescending, targetDescending);
+        System.out.println("Descending Order Result: " + resultDescending);
+    }
+
+    static int orderAgnosticBinarySearch(int arr[], int target) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        boolean isAscending = arr[start] < arr[end];
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            if (arr[mid] == target) {
+                return mid;
+            }
+
+            if (isAscending) {
+                if (target < arr[mid]) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+            } else {
+                if (target > arr[mid]) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+            }
+        }
+
+        return -1;
+}
