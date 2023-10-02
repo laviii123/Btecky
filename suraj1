@@ -1,0 +1,25 @@
+
+//Convert nesting structure of array to single dimensional array 
+//let input = [1, 2, 3, [4, 5], [[9], 0, [2], [6, [7, [8]]]]];
+//desire output = [1, 2, 3, 4, 5, 9, 0, 2, 6, 7, 8];
+
+
+function flattenArray(input) {
+  let result = [];
+  
+  for (let i = 0; i < input.length; i++) {
+    if (Array.isArray(input[i])) {
+      // If the element is an array, recursively flatten it
+      result = result.concat(flattenArray(input[i]));
+    } else {
+      // If the element is not an array, add it to the result
+      result.push(input[i]);
+    }
+  }
+  
+  return result;
+}
+
+const input = [1, 2, 3, [4, 5], [[9], 0, [2], [6, [7, [8]]]]];
+const output = flattenArray(input);
+console.log(output);
