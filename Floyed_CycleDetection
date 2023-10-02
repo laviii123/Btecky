@@ -1,0 +1,128 @@
+#include<iostream>
+using namespace std;
+
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node* random;
+
+    Node(int data){
+        this->data = data;
+        this->next = NULL;
+        this->random = NULL;
+    }
+};
+
+void InsertTail(Node* &head, Node* &tail, int data)
+{
+    Node* newnode = new Node(data);
+    if(head == NULL){
+        head = newnode;
+        tail = newnode;
+        return;
+    }
+    else{
+        tail->next = newnode;
+        tail = newnode;
+    }
+}
+
+Node *cloneList(Node *head)
+{
+    // Step 1 :- Create A clone List without random pointer:-
+    Node* cloneHead = NULL;
+    Node* cloneTail = NULL;
+    Node* ptr = head;
+    
+    while(ptr != NULL){
+        InsertTail(cloneHead,cloneTail,ptr->data);
+        ptr = ptr->next;
+    }
+    
+    // Step 2:- Clone Nodes Add in-between Original Node:-
+    Node* originalNode = head;
+    Node* cloneNode = cloneHead;
+    
+    while(originalNode != NULL && cloneNode != NULL){
+        Node* foreward = originalNode->next;
+        originalNode->next = cloneNode;
+        originalNode = foreward;
+        
+        foreward = cloneNode->next;
+        cloneNode->next = originalNode;
+        cloneNode = foreward;
+    }
+    
+    // Step 3 :- Copy Random pointer of original pointer in Clone LL:-
+    Node* temp = head;
+    while(temp != NULL){
+        if(temp->next != NULL){
+            if(temp->random != NULL){
+                temp->next->random = temp->random->next;
+            }
+            else{
+                temp->next->random = temp->random;
+            }
+        }
+        
+        temp = temp->next->next;
+    }
+    
+    // Step 4 :- Revert Changes done in Step 2 :-
+    originalNode = head;
+    cloneNode = cloneHead;
+    
+    while(originalNode != NULL && cloneNode != NULL){
+        originalNode->next = cloneNode->next;
+        originalNode = originalNode->next;
+        
+        if(originalNode != NULL){
+            cloneNode->next = originalNode->next;
+        }
+        cloneNode = cloneNode->next;
+    }
+    
+    // Step 5 :- Return Clone Head:-
+    return cloneHead;
+}
+
+void display(Node* head){
+    Node* ptr = head;
+    while(ptr != NULL){
+        cout<<ptr->data<<" ";
+        ptr = ptr->next;
+    }cout<<endl;
+}
+
+void random_ptr_check(Node* head){
+    Node* ptr = head;
+    while(ptr != NULL){
+        if(ptr->random == NULL){
+            cout<<"0 "<<" ";
+        }
+        else{
+            cout<<ptr->random->data<<" ";
+        }
+        ptr = ptr->next;
+    }cout<<endl;
+}
+
+int main(){
+    Node* head = NULL;
+    Node* first = new Node(1);
+    Node* second = new Node(2);
+    Node* third = new Node(3);
+    head = first;
+    first->next = second;
+    second->next = third;
+    first->random = third;
+    second->random = first;
+    display(head);
+    random_ptr_check(head);
+
+    Node* head2 = cloneList(head);
+    display(head2);
+    random_ptr_check(head2);
+    return 0;
+}
