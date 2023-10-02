@@ -1,0 +1,142 @@
+body{
+  background-color: #F3FDE8;
+}
+#form {
+    display: grid;
+    place-items: center;
+    width: 300px;
+    height: 400px;
+    padding: 25px;
+    background-color: #EF9595;
+    box-shadow: 0px 15px 60px #EFB495;
+    outline: 1px solid #3b0581;
+    border-radius: 20px;
+  }
+  
+  #form-body {
+    top: 50%;
+    right: 25px;
+    left: 25px;
+    width: 230px;
+  }
+  
+  #welcome-lines {
+    text-align: center;
+    line-height: 1;
+  }
+  
+  #welcome-line-1 {
+    color: #016A70;
+    font-weight: 600;
+    font-size: 40px;
+  }
+  
+  #welcome-line-2 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 17px;
+  }
+  
+  #input-area {
+    margin-top: 40px;
+  }
+  
+  .form-inp {
+    padding: 11px 25px;
+    background: transparent;
+    border: 1px solid #e3e3e3;
+    line-height: 1;
+    border-radius: 8px;
+  }
+  
+  .form-inp:focus {
+    border: 1px solid #e40a0a;
+  }
+  
+  .form-inp:first-child {
+    margin-bottom: 15px;
+  }
+  
+  .form-inp input {
+    width: 100%;
+    background: none;
+    font-size: 13.4px;
+    color: #ac0707;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .form-inp input:focus {
+    outline: none;
+  }
+  
+  #submit-button-cvr {
+    margin-top: 20px;
+  }
+  
+  #submit-button {
+    display: block;
+    width: 100%;
+    color: #016A70;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+    padding: 14px 13px 12px 13px;
+    border: 0;
+    outline: 1px solid #016A70;
+    border-radius: 8px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+  }
+  
+  #submit-button:hover {
+    transition: all ease-in-out .3s;
+    background-color: #00FF7F;
+    color: #161616;
+    cursor: pointer;
+  }
+  
+  #forgot-pass {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  #forgot-pass a {
+    color: #868686;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  
+  #bar {
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    width: 28px;
+    height: 8px;
+    margin-left: -33px;
+    background-color: #0a25bb;
+    border-radius: 10px;
+  }
+  
+  #bar:before,
+  #bar:after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ececec;
+    border-radius: 50%;
+  }
+  
+  #bar:before {
+    right: -20px;
+  }
+  
+  #bar:after {
+    right: -38px;
+  }
+  
+      
