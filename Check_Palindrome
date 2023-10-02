@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+int size_char(char ch[])
+{
+    int count = 0;
+    for (int i = 0; ch[i] != '\0'; i++)
+    {
+        count++;
+    }
+    return count;
+}
+
+bool check_Palindrome(char *ch, int size)
+{
+    int s = 0, e = size - 1;
+    while (s <= e)
+    {
+        if (ch[s] != ch[e])
+        {
+            return false;
+        }
+        else
+        {
+            s++;
+            e--;
+        }
+    }
+    return true;
+    
+}
+
+int main()
+{
+    char ch[10];
+    cout << "Enter A name:" << endl;
+    cin >> ch;
+
+    int len = size_char(ch);
+    if (check_Palindrome(ch,len))
+    {
+        cout<<"This Word is Palindrome "<<endl;
+    }
+    else
+        cout<<"Sorry It is not a palindrome word "<<endl;
+    
+    return 0;
+}
