@@ -1,0 +1,40 @@
+import pyttsx3
+import speech_recognition as sr
+
+# Initialize the speech recognition engine
+r = sr.Recognizer()
+
+# Function to convert text to speech
+def speak(text):
+    engine = pyttsx3.init()
+    engine.say(text)
+    engine.runAndWait()
+
+# Function to listen to user's voice input
+def listen():
+    with sr.Microphone() as source:
+        print("Listening...")
+        audio = r.listen(source)
+        try:
+            text = r.recognize_google(audio)
+            print("You said:", text)
+            return text
+        except sr.UnknownValueError:
+            print("Sorry, I didn't catch that.")
+        except sr.RequestError:
+            print("Sorry, I'm unable to process your request.")
+
+# Main function
+def main():
+    speak("Hello! I'm your voice cloning assistant. How can I assist you today?")
+    while True:
+        speak("What would you like me to say?")
+        text = listen()
+        if text:
+            speak("You said: " + text)
+        else:
+            speak("Sorry, I didn't catch that. Could you please repeat?")
+
+# Start the voice cloning app
+if __name__ == "__main__":
+    main()
