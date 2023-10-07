@@ -1,0 +1,37 @@
+using System;
+
+namespace EASendMail
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            try
+            {
+                // Use "TryIt" as a license code for evaluation use
+                var oMail = new SmtpMail("TryIt");
+
+                // Change it to yours
+                oMail.From = "youremail@domain.com";
+
+                // The email address does not exist
+                oMail.To = "no-address@gmail.com";
+
+                // Do not set the SMTP server address
+                SmtpServer oServer = new SmtpServer("");
+
+                SmtpClient oSmtp = new SmtpClient();
+                oSmtp.TestRecipients(oServer, oMail);
+
+                Console.WriteLine("Email address was verified!");
+            }
+            catch (Exception ep)
+            {
+                Console.WriteLine("Failed to test email with the following error:");
+                Console.WriteLine(ep.Message);
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
