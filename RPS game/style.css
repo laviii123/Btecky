@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(25, 25, 25);
+    color: white;
+    font-family: Arial;
+  }
+
+.container{
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) ;
+}
+.move-button {
+  background-color: transparent;
+  border: 3px solid white;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  margin-right: 10px;
+  cursor: pointer;
+  
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.move-icon {
+  height: 50px;
+}
+
+
+
+.result {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.score,
+.js-moves,
+.js-result {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.reset-score-button,
+.auto-play-button {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 8px 15px;
+  cursor: pointer;
+  
+}
+
+
+/*js-reset-score-button*/
+
