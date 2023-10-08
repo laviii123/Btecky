@@ -1,0 +1,42 @@
+class Solution{
+    public:
+    int maxAnd(int N, vector<int> A){
+        // code here
+        
+        vector<int> prefix(N);
+prefix[0] = A[0];
+for (int i = 1; i < N; i++)
+{
+  prefix[i] = A[i] &prefix[i - 1];
+}
+  vector<int> suffix(N);
+suffix[N - 1] = A[N - 1];
+for (int i = N - 2; i >= 0; i--)
+{
+  suffix[i] = A[i] &suffix[i + 1];
+}
+
+  int ans = 0;
+
+// Iterating through the array
+for (int i = 0; i < N; i++)
+{
+  int max_and = 0XFFFFFFFF;
+  if (i == 0)
+  {
+   max_and = max_and &suffix[i + 1];
+  }
+  else if (i == N - 1)
+  {
+   max_and = max_and &prefix[i - 1];
+  }
+  else
+  {
+   max_and = max_and &prefix[i - 1];
+   max_and = max_and &suffix[i + 1];
+  }
+  ans = max(ans, max_and);
+}
+return ans;
+    }
+};     3rd answer
