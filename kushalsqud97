@@ -1,0 +1,37 @@
+/// hack swaq lavii helper 
+
+
+class Solution{
+  public:
+    // Should return head of the modified linked list
+    Node *sortedInsert(struct Node* head, int data) {
+        Node* curr = head;
+        Node* prev = NULL;
+        Node* newNode = new Node(data);
+        while(curr != NULL){
+            
+            if(curr->data <= data){
+                prev = curr;
+                curr = curr->next;
+            }
+            
+            else {
+                if(prev == NULL){
+                    newNode->next = curr;
+                    head = newNode;
+                } else{
+                    newNode->next = prev->next;
+                    prev->next = newNode;
+                }
+                break;
+            }
+            
+        }
+        if(prev != NULL && prev->next == NULL){
+            prev->next = newNode;
+        }
+        return head;
+    }
+};
+
+//CPP - @geeksforgeeks_potd
