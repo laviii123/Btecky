@@ -1,0 +1,32 @@
+////
+
+
+
+class Solution {
+    Node sortedInsert(Node head1, int key) {
+        // Step 1: Create a new node with the given key.
+        Node newNode = new Node(key);
+        
+        // If the linked list is empty or the key is smaller than or equal to the head's data,
+        // insert the new node at the beginning.
+        if (head1 == null || key <= head1.data) {
+            newNode.next = head1;
+            return newNode;
+        }
+        
+        // Step 2: Traverse the linked list to find the correct position.
+        Node current = head1;
+        Node prev = null;
+        while (current != null && current.data < key) {
+            prev = current;
+            current = current.next;
+        }
+        
+        // Step 3: Insert the new node at the correct position.
+        prev.next = newNode;
+        newNode.next = current;
+        
+        // Step 4: Return the head of the modified linked list.
+        return head1;
+    }
+}
