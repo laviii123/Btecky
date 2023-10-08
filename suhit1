@@ -1,0 +1,20 @@
+import cv2
+cap=cv2.VideoCapture(0)
+print("cap",cap)
+#DIVX,XVID,MJPG,X264,WMV1,WMV2 video capturing formats
+fourcc=cv2.VideoWriter_fourcc(*"XVID")
+#int contain 4 parameters,name,codecc,fps,resolution
+output=cv2.VideoWriter("output.avi",fourcc,20.0,(640,480))
+while cap.isOpened():
+    ret,frame=cap.read() #ret is boolean value and frame is image
+    if ret==True:
+        cv2.imshow("frame",frame)
+        grey=cv2.cvtColor(frame,cv2.COLOR_RGB2GRAY)# converts to grey images
+        cv2.imshow("frame1",grey)
+        output.write(frame)
+        x=cv2.waitKey(25)
+        if x==ord('s'):
+            break
+cap.release()
+output.release()
+cv2.destroyAllWindows()
