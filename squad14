@@ -1,0 +1,14 @@
+     
+        if (memo[i][maxSoFar][remain] != -1) { 
+            return memo[i][maxSoFar][remain]; 
+        } 
+         
+        int ans = 0; 
+        for (int num = 1; num <= maxSoFar; num++) { 
+            ans = (ans + dp(i + 1, maxSoFar, remain)) % MOD; 
+        } 
+ 
+        for (int num = maxSoFar + 1; num <= m; num++) { 
+            ans = (ans + dp(i + 1, num, remain - 1)) % MOD; 
+        } 
+         
