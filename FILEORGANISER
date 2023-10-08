@@ -1,0 +1,27 @@
+import os
+import shutil
+
+source_directory = '/path/to/source_directory'
+destination_directory = '/path/to/destination_directory'
+
+extension_to_folder = {
+    '.txt': 'Text',
+    '.jpg': 'Images',
+}
+
+for folder_name in extension_to_folder.values():
+    folder_path = os.path.join(destination_directory, folder_name)
+    os.makedirs(folder_path, exist_ok=True)
+
+for filename in os.listdir(source_directory):
+    source_path = os.path.join(source_directory, filename)
+
+    if os.path.isfile(source_path):
+        _, file_extension = os.path.splitext(filename)
+
+        folder_name = extension_to_folder.get(file_extension, 'Other')
+
+        destination_path = os.path.join(destination_directory, folder_name, filename)
+
+        shutil.move(source_path, destination_path)
+        print(f"Moved {filename} to {folder_name} folder.")
