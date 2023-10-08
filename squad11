@@ -1,0 +1,36 @@
+class Solution{
+  public:
+  const int mod=1e9+7;
+    int distinctSubsequences(string s)
+    {
+        vector<int>check(256,-1);
+        // check array to check whether the element appeared before so that duplicate subsequences does not occur
+        int n=s.length();
+        vector<int>dp(n+1,0);
+        dp[0]=1;// string with 0 size has 1 subsequence i.e  ""
+        for(int i=1;i<=n;i++)
+        {  
+            //for ex-  abc  dp[1]=2 since now subsequence possible "a",""
+            // dp[2] "a" "b" "" "ab" i.e for previous combination we will get twice the combination
+            // for each character occuring next
+            // Important point: we have to remove the duplicate subsequences
+            // i.e that happens when initial character occured previously
+            // for ex -- abb
+            // dp[1]=2;
+            // dp[2]=4
+            // now for dp[3]=6 i.e (8-2[repeated ones ("b"&"ab")])     since "","a","b","ab","bb","abb"=>ans
+            
+            dp[i]=(2*dp[i-1])%mod; 
+            if(check[s[i-1]]!=-1)
+            {
+                dp[i]=(dp[i]-dp[check[s[i-1]]]+mod)%mod;
+            }
+            check[s[i-1]]=i-1;
+        }
+        return dp[n]%mod;
+    }
+};
+
+//C++
+//POTD SOLUTION(GFG)
+//2 Oct 2023
