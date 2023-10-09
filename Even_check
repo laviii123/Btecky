@@ -1,0 +1,7 @@
+def is_even(num):
+    return num % 2 == 0
+
+# Example usage:
+number = 6
+result = is_even(number)
+print(f"{number} is even: {result}")
