@@ -1,0 +1,72 @@
+% Best-First Search and A* Search algorithms implementation
+
+% Example problem: Finding the shortest path in a graph
+
+% Define the graph with edges and their costs
+% Here's an example graph represented as a predicate graph/3
+% You can customize the graph to fit your specific problem
+
+% graph(StartNode, EndNode, Cost)
+graph(a, b, 2).
+graph(a, c, 3).
+graph(b, d, 2).
+graph(b, e, 4).
+graph(c, f, 1).
+graph(c, g, 3).
+graph(d, h, 3).
+graph(e, h, 2).
+graph(f, i, 1).
+graph(f, j, 3).
+graph(g, j, 2).
+graph(h, k, 2).
+graph(i, l, 2).
+graph(j, l, 1).
+graph(k, l, 3).
+
+% Best-First Search algorithm
+best_first_search(Start, SolutionPath) :-
+    best_first_search([(0, Start, [])], SolutionPath).
+
+% Best-First Search helper predicate
+best_first_search([(Cost, State, Path) | _], SolutionPath) :-
+    goal_state(State),
+    reverse([State | Path], SolutionPath).
+
+best_first_search([(Cost, CurrentState, CurrentPath) | Rest], SolutionPath) :-
+    findall((NewCost, NewState, [Action | CurrentPath]),
+            (graph(CurrentState, NewState, _),
+            not(member(NewState, CurrentPath))),
+            Successors),
+    append(Successors, Rest, Queue),
+    sort(0, @=<, Queue, SortedQueue),
+    best_first_search(SortedQueue, SolutionPath).
+
+% Define the goal state
+% In this example, the goal state is 'l'
+goal_state(l).
+
+% A* Search algorithm
+a_star_search(Start, SolutionPath) :-
+    a_star_search([(0, 0, Start, [])], SolutionPath).
+
+% A* Search helper predicate
+a_star_search([(Cost, _, State, Path) | _], SolutionPath) :-
+    goal_state(State),
+    reverse([State | Path], SolutionPath).
+
+a_star_search([(Cost, G, CurrentState, CurrentPath) | Rest], SolutionPath) :-
+    findall((F, NewG, NewState, [Action | CurrentPath]),
+            (graph(CurrentState, NewState, Cost),
+            not(member(NewState, CurrentPath))),
+            Successors),
+    append(Successors, Rest, Queue),
+    sort(0, @=<, Queue, SortedQueue),
+    a_star_search(SortedQueue, SolutionPath).
+
+% Example usage
+
+% Best-First Search
+?- best_first_search(a, SolutionPath).
+
+% A* Search
+?- a_star_search(a, SolutionPath).
