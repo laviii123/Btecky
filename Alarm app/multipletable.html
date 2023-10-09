@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Tables</title>
+</head>
+<body>
+    <div id="table-container"></div>
+    <script>
+      // Number of tables to create
+const numberOfTables = 10;
+
+// Container element to hold the tables
+const tableContainer = document.getElementById('table-container');
+
+// Function to create a table with rows and columns
+function createTable(tableNumber) {
+    const table = document.createElement('table');
+    const caption = document.createElement('caption');
+    caption.textContent = `Table ${tableNumber}`;
+    table.appendChild(caption);
+
+    const thead = document.createElement('thead');
+    const tbody = document.createElement('tbody');
+
+    // Create table headers (th)
+    const headerRow = document.createElement('tr');
+    for (let i = 1; i <= 5; i++) {
+        const th = document.createElement('th');
+        th.textContent = `Header ${i}`;
+        headerRow.appendChild(th);
+    }
+    thead.appendChild(headerRow);
+
+    // Create table rows and cells (td)
+    for (let i = 1; i <= 5; i++) {
+        const row = document.createElement('tr');
+        for (let j = 1; j <= 5; j++) {
+            const cell = document.createElement('td');
+            cell.textContent = `Row ${i}, Col ${j}`;
+            row.appendChild(cell);
+        }
+        tbody.appendChild(row);
+    }
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    tableContainer.appendChild(table);
+}
+
+// Create multiple tables
+for (let i = 1; i <= numberOfTables; i++) {
+    createTable(i);
+}
+
+    </script>
+</body>
+</html>
