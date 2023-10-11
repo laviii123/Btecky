@@ -1,0 +1,121 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void main()
+{
+  srand(time(NULL));
+  char player[50];
+  int a, c, b, i;
+  static int d = 0, p = 0;
+  // printf("%d\n\n", rand() % 3);
+  printf("Enter Player Name:");
+  scanf("%s", &player);
+  // Rules
+  printf("\n\nEnter 1 for see the rules of game or Enter 2 for skipping the rules :\n");
+  scanf("%d", &c);
+  if (c == 1)
+  {
+    printf("\n1.Rock (represented as 0) beats scissors (represented as 2).\n2.Scissors (represented as 2) beat paper (represented as 1).\n3.Paper (represented as 1) beats rock (represented as 0).\n4.If both players choose the same value, it's a tie and the game is replayed.\n\n\nWelcome %s !! \n Lets play the game ...Rock , Paper & Scissors... !!\n\n", player);
+  }
+  else if (c == 2)
+  {
+    printf("Welcome %s !! \n Lets play the game ...Rock , Paper & Scissors... !!\n", player);
+    printf("Start Now...!!!\n");
+  }
+  else if (c != 1 && c != 2)
+  {
+    printf("Wrong Choice\n");
+    goto last;
+  }
+
+  // game start
+
+replay:
+
+  for (i = 1; i < 4; i++)
+  {
+    printf("Your %d attempt \n\n", i);
+    printf("Choose one from Rock(0) , Paper(1) & Scissors(2) :\n ");
+    scanf("%d", &a);
+
+    b = rand() % 3;
+    printf("Chosen by Deepak : %d\n\n", b);
+
+    switch (a)
+    {
+    case 0:
+      if (b == 0)
+      {
+        printf("Oh! Game is tie Replaying...\n\n");
+        goto replay;
+      }
+      else if (b == 1)
+      {
+        printf("Deepak win\n");
+        d++;
+      }
+      else
+      {
+        printf("%s win\n", player);
+        p++;
+      }
+      break;
+
+    case 1:
+      if (b == 0)
+      {
+        printf("%s win\n", player);
+        p++;
+      }
+      else if (b == 1)
+      {
+        printf("Oh! Game is tie Replaying...\n\n");
+        goto replay;
+      }
+      else
+      {
+        printf("Deepak win\n");
+        d++;
+      }
+      break;
+
+    case 2:
+      if (b == 0)
+      {
+        printf("Deepak win\n\n");
+        d++;
+      }
+      else if (b == 1)
+      {
+        printf("%s win\n", player);
+        p++;
+      }
+      else
+      {
+        printf("Oh! Game is tie Replaying...\n\n");
+        goto replay;
+      }
+      break;
+
+    default:
+      printf("Wrong choice\n\n");
+      goto replay;
+    }
+  }
+
+  if (p > d)
+  {
+    printf("Finally %s win ", player);
+  }
+  else if (p == d)
+  {
+    printf("Game is Drawn");
+  }
+  else
+  {
+    printf("Finally Deepak Win");
+  }
+last:
+  printf(" ");
+}
