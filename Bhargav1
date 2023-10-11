@@ -48,12 +48,12 @@ void merge(vector<int>& arr, int l, int m, int r) {
     }
 }
 
-// l is for left index and r is for right index of the sub-vector of arr to be sorted
+// Merge Sort function
 void mergeSort(vector<int>& arr, int l, int r) {
     if (l < r) {
-        int m = l + (r - l) / 2; // Same as (l+r)/2, but avoids overflow for large l and r
+        int m = l + (r - l) / 2; // Calculate the middle index
 
-        // Sort first and second halves
+        // Recursively sort both halves
         mergeSort(arr, l, m);
         mergeSort(arr, m + 1, r);
 
