@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.hero{
+    /* background-image: url("imgs/bg3.png"); */
+    background-image: url(imgs/b3_copy.png);
+    background-size: cover;
+    background-position-x: left;
+    align-items: center;
+    align-content: center;
+    height: 40vw;
+    width: 100vw;
+}
+
+.hero a{
+    text-decoration: none;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2.5vw;
+    align-items: center;
+    /* background-color: aquamarine; */
+}
+
+.logo{
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}
+
+.logo-icon{
+    font-size: 2rem;
+    color: white;
+}
+
+.logo-text{
+    font-size: 1.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    font-weight: bolder;
+    margin-left: 4%;
+} 
+
+.main-nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: monospace;
+    width: 70%;
+    margin-left: 0%;
+    padding-left: 2vw;
+}
+
+.main-nav a:hover{
+    color: white;
+    text-decoration: underline;
+    font-size: 1.1rem;
+    font-family: monospace;
+    width: 70%;
+    margin-left: 0%;
+    padding-left: 2vw;
+}
+
+.login-btn{
+    background-color: white;
+    color: rgb(29, 0, 29);
+    border-radius: 100px;
+    padding: 0.85vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-style: none;
+}
+
+.login-btn:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.para{
+    color: white;
+    text-align: center;
+    padding-top: 6vw;
+    padding-left: 23vw;
+    width: 60vw;
+}
+
+.bold-text{
+    font-size: 50px;
+    font-family:  Helvetica, sans-serif;
+    font-weight: 900;
+}
+
+.discord-text{
+    margin-top: 5%;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.buttons{
+    margin-left: 33vw;
+    margin-top: 1.1vw;
+    display: flex;
+}
+
+.main-button{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5rem;
+    font-size: 20px;
+    font-weight: 50;
+    border-style: none;
+}
+
+.white{
+    color: black;
+    background-color: white;
+}
+
+.white:hover{
+    color: rgb(123, 0, 255);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.black{
+    color: white;
+    background-color: rgb(36, 36, 36);
+}
+
+.black:hover{
+    background-color: rgb(59, 59, 59);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.box{
+    display: flex;
+    height: 43vw;
+    /* justify-content: space-evenly; */
+    align-items: center;
+}
+
+
+.bold-title{
+    font-family: Helvetica, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+}
+
+.para-content{
+    padding-top: 2vw;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 20;
+    word-spacing: 0.56rem;
+    line-height: 2.3rem;
+    padding-top: auto;
+}
+
+/* will have to make different classes for algningment odd image and content as i am using padding and margin instead of justify items and elements*/
+
+.images-odd{
+    padding-left: 10vw;
+    padding-right: 8vw;
+}
+
+
+.content-odd{
+    width: 40%;
+    padding-right: 5vw;
+}
+
+.images-even{
+    padding-right: 10vw;
+    width: 60%;
+}
+
+.content-even{
+    padding-left: 10vw;
+    padding-right: 8vw;
+}
+
+.last-box{
+    align-items: center;
+    text-align: center;
+    padding-top: 8vw;
+}
+
+.ending{
+    padding-left: 18vw;
+    padding-right: 18vw;
+}
+
+.start-your-journey{
+    background-image: url(imgs/last.svg);
+    background-attachment: relative;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
+
+ul{
+    list-style: none;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5vw;
+    padding-bottom: 8vw;
+    background-color: rgb(40, 40, 40);
+}
+
+#country{
+    background: none;
+    border: none;
+    color: white;
+    
+}
+
+.sns i{
+    font-size: 1.5rem;
+    color: white;
+    margin-right: 1em;
+    margin-top: 2em;
+}
+
+.list-head{
+    color: rgb(81, 81, 255);
+    font-size: 20px;
+    font-weight: 50;
+    padding-left: 1.3em;
+}
+
+.footer-list{
+    padding-top: 1.5em;
+}
+.footer-list li a{
+    color: white;
+    padding-top: 1em;
+    font-size: 16px;
+    font-weight: lighter;
+    text-decoration: none;
+
+}
+
+.footer-list li a:hover{
+    margin-top: 1em;
+    text-decoration: underline;
+}
