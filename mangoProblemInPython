@@ -1,0 +1,24 @@
+def mango_problem(mangoes):
+    if not mangoes:
+        return None  # Handle the case of an empty list.
+
+    total_weight = sum(mangoes)
+    heaviest_mango = max(mangoes)
+    lightest_mango = min(mangoes)
+    average_weight = total_weight / len(mangoes)
+
+    return {
+        "Total Weight": total_weight,
+        "Heaviest Mango": heaviest_mango,
+        "Lightest Mango": lightest_mango,
+        "Average Weight": average_weight
+    }
+
+# Example usage:
+mangoes = [150, 200, 120, 250, 180]
+result = mango_problem(mangoes)
+if result:
+    for key, value in result.items():
+        print(f"{key}: {value}")
+else:
+    print("The list of mangoes is empty.")
