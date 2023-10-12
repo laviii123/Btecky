@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
+  /* align-self: center; */
+  /* background-color: black; */
+  background: linear-gradient(to right, #de6262, #ffb88c);
+}
+h1 {
+  position: absolute;
+  top: 20px;
+  font-size: 50px;
+  color: white;
+  letter-spacing: 10px;
+  /* border: 2px solid white; */
+}
+.container {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* border: 2px solid white; */
+}
+.cell {
+  position: relative;
+  top: 100px;
+  width: 100px;
+  height: 100px;
+  /* background-color: #dafffb; */
+  background-color: white;
+  filter: opacity(85%);
+  opacity: 80%;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+}
+.cell:hover {
+  filter: drop-shadow(0 0 0.75rem crimson);
+}
+.player {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 10px;
+  color: white;
+}
+.player--1 {
+  position: absolute;
+  left: 100px;
+  top: 220px;
+}
+.player--2 {
+  position: absolute;
+  left: 980px;
+  top: 220px;
+}
+.cross {
+  position: absolute;
+  left: 170px;
+  top: 270px;
+  font-size: 20px;
+  color: white;
+}
+.circle {
+  position: absolute;
+  left: 1050px;
+  top: 270px;
+  font-size: 20px;
+  color: white;
+}
+.box--1 {
+  position: absolute;
+  left: 90px;
+  top: 210px;
+  width: 180px;
+  height: 50px;
+  background-color: yellow;
+  filter: opacity(10%);
+  z-index: -1;
+}
+.box--2 {
+  position: absolute;
+  left: 970px;
+  top: 210px;
+  width: 180px;
+  height: 50px;
+  background-color: white;
+  filter: opacity(10%);
+  z-index: -1;
+}
+.btn {
+  position: relative;
+  top: 420px;
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffb88c;
+  font: sans-serif;
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: white;
+  margin-right: 4px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.reload {
+  margin-left: 5px;
+}
+.btn:hover {
+  background-color: #ffdd83;
+  /* filter: drop-shadow(0 0 0.5rem orange); */
+}
+
+#cross #round {
+  font-size: 100px;
+}
+.hidden {
+  opacity: 0%;
+}
+
+/* .win {
+  filter: drop-shadow(0 0 0.5rem #f8de22);
+  opacity: 70%;
+} */
+
+.winner--1 {
+  position: absolute;
+  top: 180px;
+  left: 90px;
+  font-size: 30px;
+}
+.winner--2 {
+  position: absolute;
+  top: 180px;
+  left: 970px;
+  font-size: 30px;
+}
+.hidden {
+  opacity: 0%;
+  z-index: 1;
+}
