@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(96,32,103,1) 0%, rgba(164,52,177,1) 0%, rgba(93,255,0,1) 0%, rgb(104, 195, 188) 0%);
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+    width: 540px;
+    background: #f5eaea;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 60px rgba(1, 0, 5, 0.15);
+
+}
+
+.wrapper h2{
+    font-size: 28px;
+    font-weight: 700;
+  text-align: center;
+}
+
+.wrapper .div-bar{
+    display: block;
+    width: 150px;
+    background: #ff4d6d;
+    height: 6px;
+    border-radius: 10px;
+    margin: 13px 160px;
+    
+}
+
+.wrapper .calculator{
+    position: relative;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px 0px;
+}
+
+
+.calculator .calculator-input{
+    position: relative;
+    width: 50%;
+    justify-content: space-around;
+    padding: 5px 10px;
+    display: block;
+}
+
+.calculator .calculator-input input{
+    width: 100%;
+    height: 40px;
+    padding: 20px 14px;
+    font-family: "Poppins",sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    border: 1px solid #7d7d7d;
+    border-radius: 4px;
+}
+
+.calculator .calculator-input input:focus{
+    outline: none;
+    border: 1px solid #60d394;
+}
+
+
+.calculator .calculator-input label{
+    color:#ff4d6d;
+    font-size: 16px;
+    padding: 2px 4px;
+    font-weight: 500;
+}
+
+.calculator .calculator-input button {
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: "Poppins",sans-serif;
+    background: #37c879;
+    border: 0;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+.calculator .calculator-input button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2px #666;
+  transform: translateY(1px);
+}
+
+.calculator .calculator-input button:hover {
+ 
+  background: #21d371;
+  
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+.wrapper .calculator-result{
+    position: relative;
+    display: block;
+    padding: 10px;
+    margin: 20px 0;
+}
+.wrapper .calculator-result ul{
+    width: 100%;
+    background: #96125110;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.wrapper .calculator-result li{
+    list-style: none;
+    line-height: 28px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.wrapper .calculator-result .loan_emi::before{
+  content: "₹";
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 6px;
+  opacity: 0.4;
+}
+
+.wrapper .calculator-result .loan_principle::before{
+  content: "₹";
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 6px;
+  opacity: 0.4;
+}
+
+.wrapper .calculator-result .loan_total::before{
+  content: "₹";
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 6px;
+  opacity: 0.4;
+}
+
+.wrapper .calculator-result .loan_interest_rate::before{
+  content: "₹";
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 6px;
+  opacity: 0.4;
+}
+
+.calculator-result .loan_emi{
+    font-weight: 700;
+    font-size: 22px;
+    color: #ff4d6d;
+}
+.calculator-result .loan_principle,
+.calculator-result .loan_interest_rate,
+.calculator-result .loan_total{
+    color: #333332;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.calculator-result canvas{
+    padding: 20px;
+    
+    
+}
+
+
+@media screen and (max-width: 768px){
+    .wrapper{
+        width: 100%;
+        padding: 20px 10px;
+        margin-top: 250px;
+        
+    }
+    .wrapper .calculator{
+        flex-direction: column;
+    }
+    .wrapper h2{
+        width: 100%;
+        
+    }
+    
+    .wrapper .div-bar{
+        display: none;
+        align-items: center;
+        
+        margin: 13px 160px;
+        
+    }
+
+    .wrapper .calculator .calculator-input{
+        width: 100%;
+    }
+    .wrapper .calculator .calculator-input input{
+        width: 100%;
+    }
+    .wrapper .calculator .calculator-input button{
+        width: 100%;
+    }
+    .wrapper .calculator-result ul{
+        width: 100%;
+    }
+    .wrapper .calculator-result li{
+        font-size: 16px;
+    }
+    .wrapper .calculator-result .loan_emi::before{
+        font-size: 18px;
+    }
+    .wrapper .calculator-result .loan_principle::before{
+        font-size: 18px;
+    }
+    .wrapper .calculator-result .loan_total::before{
+        font-size: 18px;
+    }
+    .wrapper .calculator-result .loan_interest_rate::before{
+        font-size: 18px;
+    }
+    .calculator-result .loan_emi{
+        font-size: 20px;
+    }
+    .calculator-result .loan_principle,
+    .calculator-result .loan_interest_rate,
+    .calculator-result .loan_total{
+        font-size: 20px;
+    }
+}
