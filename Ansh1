@@ -1,0 +1,234 @@
+#banking system using python and sql
+import mysql.connector as sq
+mydb=sq.connect(host="localhost",user="root",passwd="root",database="Bank1")
+
+def openacc():
+    n=input("Enter Name : ")
+    ac =input("Enter Account No :")
+    db=input("Enter D.O.B :")
+    ad=input("Enter Address : ")
+    p=input("Enter Phone number: ")
+    em=input("Enter EmsilID:")
+    aad=input("Enter Adhar No: ")
+    ob=int(input("Enter Opening Balance : "))
+    c1=mydb.cursor()
+    Q1="Insert into account values('{}','{}','{}','{}','{}','{}','{}',{})".format(n,ac,db,ad,p,em,aad,ob)
+    Q2="Insert into ammount values('{}','{}',{})".format(n,ac,ob)
+    c1.execute(Q1)
+    c1.execute(Q2) 
+    mydb.commit()
+    print("Data Entered successfully")
+    print("\n")
+    admin_menu()
+
+def depo():
+    ac=input("Enter Account No :")
+    am = int(input("Enter Amount: "))
+    a="select balance from ammount where acno = %s"
+    data=(ac,)
+    c1=mydb.cursor()
+    c1.execute(a,data)
+    myresult = c1.fetchone()
+    tam=myresult[0]+am
+    sql="update ammount set balance = %s where acno = %s"
+    d=(tam,ac)
+    c1.execute(sql,d)
+    mydb.commit()
+    print("Data deposited successfully to your account")
+    print("\n")
+    cust_menu()
+
+def withdr():
+    ac=input("Enter Account No :")
+    am = int(input("Enter Amount: "))
+    a="select balance from ammount where acno = %s"
+    data=(ac,)
+    c1=mydb.cursor()
+    c1.execute(a,data)
+    myresult = c1.fetchone()
+    tam=myresult[0]-am
+    sql="update ammount set balance = %s where acno = %s"
+    d=(tam,ac)
+    c1.execute(sql,d)
+    mydb.commit()
+    print("Data withdrawn successfully from your account")
+    print("\n")
+    cust_menu()
+    
+    
+def balance():
+    ac=input("Enter Account No :")
+    a="select balance from ammount where acno = %s"
+    data = (ac,)
+    c1=mydb.cursor()
+    c1.execute(a,data)
+    myresult=c1.fetchone()
+    print("Account Balance: INR",myresult[0])
+    print("\n")
+    cust_menu()
+
+def accdetails():
+    ac=input("Enter Account No:")
+    a="select * from account where acno=%s"
+    data=(ac,)
+    c1=mydb.cursor()
+    c1.execute(a,data)
+    myresult=c1.fetchone()
+    print("Account details ")
+    print("-"*120)
+    print("Name:",myresult[0])
+    print("Account numbet:",myresult[1])
+    print("Date of Birth:",myresult[2])
+    print("Address:",myresult[3])
+    print("phone number:",myresult[4])
+    print("Email ID:",myresult[5])
+    print("Aadhar No:",myresult[6])
+    print("\n")
+    cust_menu()
+       
+
+def modify_acc():
+    a1=input("Enter Customer/'s Account No:")
+    
+    print("--------------------------Modify screen---------------------------")
+    print('\n 1. Customer Name')
+    print('\n 2. Account number')
+    print('\n 3. DOB')
+    print('\n 4. Customer Address')
+    print('\n 5. Customer Phone No')
+    print('\n 6. Customer Email ID')
+    choice=int(input("What do you want to change?"))
+    new_data=input('Enter New value :')
+    c1=mydb.cursor()
+    if choice == 1:
+        field_name='name'
+    if choice == 2:
+        field_name='address'
+    if choice == 3:
+        field_name="dob"
+    if choice == 4:
+        field_name='address'
+    if choice == 5:
+        field_name='phn'
+    if choice == 6:
+        field_name='email'
+       
+    Q="update account set {}='{}' where acno='{}'".format(field_name,new_data,a1)
+    c1.execute(Q)
+    print('Customer Information modified..')
+    print("\n")
+    admin_menu()
+        
+def display_all():
+    c1=mydb.cursor()
+    c1.execute("select * from account")
+    data=c1.fetchall()
+    for r in data:
+        print(r)
+    admin_menu()
+
+def closeacc():
+    ac=input("Enter Account no:")
+    Q1="delete from account where acno=%s"
+    Q2="delete from ammount where acno=%s"
+    h=(ac,)
+    c1=mydb.cursor()
+    c1.execute(Q1,h)
+    c1.execute(Q2,h)
+    mydb.commit()
+    print("\n")
+    cust_menu()
+
+def trnsfer():
+    a1=(input("Enter your Account No :"))
+    a2=(input("Enter the AccountNo you want to transfer to :"))
+    am=int(input("Enter Ammount to be transfered"))
+    a="select balance from ammount where acno=%s"
+    data1=(a1,)
+    data2=(a2,)
+    c1=mydb.cursor()
+    c1.execute(a,data1)
+    myresult = c1.fetchone()
+    tam=myresult[0]-am
+    sql="update ammount set balance = %s where acno = %s"
+    d=(tam,a1)
+    c1.execute(sql,d)
+    c1.execute(a,data2)
+    myresult=c1.fetchone()
+    tam=myresult[0]+am
+    sql="update ammount set balance = %s where acno = %s"
+    d=(tam,a2)
+    c1.execute(sql,d) 
+    mydb.commit()
+    print("Amount Transferred successfully")
+    print("\n")
+    cust_menu()
+
+def main_menu():
+    print("-"*124)
+    print("\t\t\t\t\t\tBank Management System")
+    print("-"*124,"\n")
+    print("1.Admin Login\n2.Customer Login")
+    choice=int(input("Select your choice:"))
+    if choice==1:
+        admin_id=input("Enter Admin Username-")
+        password=input("Enter password-")
+        if admin_id=="ansh" and password=="1234":
+            admin_menu()
+        else:
+            print("Id/Pssword is incorrect")
+    elif choice==2:
+        cust_id=input("Enter Customer Username-")
+        password=input("Enter password-")
+        if cust_id=="ansh" and password=="1970":
+            cust_menu()
+        else:
+            print("Id/Pssword is incorrect")
+            main_menu()
+        
+            
+        
+def admin_menu():
+    print("1.Add new account\n")
+    print("2.Modify account details\n")
+    print("3.Display all accounts\n")
+    print("4.Exit")
+    c=int(input("Enter your choice:"))
+    if c==1:
+        openacc()
+    elif c==2:
+        modify_acc()
+    elif c==3:
+        display_all()
+    elif c==4:
+        main_menu()
+    else:
+        print("Invalid Choice")
+        
+def cust_menu():
+    print("1.Deposit Ammount\n")
+    print("2.Withdraw Ammount\n")
+    print("3.Transfer Money\n")
+    print("4.Balance Enquiry\n")
+    print("5.Account Details\n")
+    print("6.Close an account\n")
+    print("7.Exit\n")
+    ch=int(input("Enter your Choice:"))
+    if ch==1:
+        depo()
+    elif ch==2:
+        withdr()
+    elif ch==3:
+        trnsfer()
+    elif ch==4:
+        balance()
+    elif ch==5:
+        accdetails()
+    elif ch==6:
+        closeacc()
+    elif ch==7:
+        main_menu()
+    else:
+        print("Invalid Choice")
+
+main_menu()
