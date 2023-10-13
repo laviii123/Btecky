@@ -1,4 +1,4 @@
-//banking system using python and sql
+#banking system using python and sql
 import mysql.connector as sq
 mydb=sq.connect(host="localhost",user="root",passwd="root",database="Bank1")
 
