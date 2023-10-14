@@ -93,7 +93,7 @@
             color: white;
         }
 
-        #inputs input{
+        #inputs input {
             width: 100%;
             display: block;
             margin-block: 10px;
@@ -101,7 +101,8 @@
             border: 2px solid white;
             border-radius: 5px;
         }
-        #inputs button{
+
+        #inputs button {
             text-align: center;
             padding: 10px;
             background-color: white;
@@ -113,13 +114,15 @@
             bottom: 20px;
             left: 40%;
         }
-        #inputs button:hover{
+
+        #inputs button:hover {
             background-color: black;
             color: white;
             border: 2px solid white;
         }
+
         #inputs {
-            height: 350px;  
+            height: 350px;
             width: 300px;
             position: absolute;
             top: 100px;
@@ -127,23 +130,46 @@
             z-index: 1;
             padding: 40px;
             border: 2px solid wheat;
+            background-color: black;
             /* display: none; */
             /* z-index: 1; */
         }
-        #alarms-list{
+
+        #alarms-list {
             margin-top: 10px;
             display: flex;
             flex-direction: row;
             justify-content: center;
         }
-        #alarms-list h4,h3{color: aqua;}
-        #alarms-list h4{
+
+        #alarms-list h4,
+        h3 {
+            color: aqua;
+        }
+
+        #alarms-list h4 {
             margin-left: 30px;
             margin-right: 10px;
         }
-        #alert h4{
+
+        #alert h4 {
             margin-top: 8px;
             color: red;
+        }
+
+        #cancel-btn {
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        #cancel-btn:hover {
+            background-color: black;
+            color: white;
+            border: 2px solid white;
         }
     </style>
 </head>
@@ -160,6 +186,7 @@
         <label>Seconds</label>
         <input type="number" id="input-sec" min="0">
         <button id="save-alarm">Save</button>
+        <!-- <button id="cancel">Cancel</button> -->
     </div>
     <button onclick="dark()" id="btn-mode" class="dk-mode">Dark mode</button>
     <div class="container">
@@ -173,6 +200,9 @@
         </div>
         <div class="div">
             <button id="alarm-btn">Create alarm</button>
+        </div>
+        <div class="div">
+            <button id="cancel-btn">Cancel alarm</button>
         </div>
         <div id="alarms-list">
         </div>
