@@ -1,4 +1,5 @@
 let alarm_btn = document.getElementById('alarm-btn')
+let cancel_alarm = document.getElementById('cancel-btn')
 let alarm_list = document.getElementById('alarms-list')
 let input = document.getElementById('inputs')
 let container = document.getElementsByClassName('container')[0]
@@ -38,7 +39,7 @@ setInterval(() => {
             if (p_alarm_list[2].textContent == sec) {
                 console.log("Seconds matched ");
                 audio.play();
-                audio.loop=true;
+                audio.loop = true;
             }
         }
     }
@@ -50,6 +51,7 @@ setInterval(() => {
 alarm_btn.onclick = function alarm_edit() {
     input.removeAttribute('hidden');
 };
+
 
 save_alarm.onclick = function save_alarm() {
     let only_inputs = input.getElementsByTagName('input')
@@ -74,3 +76,8 @@ save_alarm.onclick = function save_alarm() {
         }, 4000);
     }
 };
+
+
+cancel_alarm.onclick = function cancel() {
+    alarm_list.innerHTML = '';
+}
