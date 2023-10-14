@@ -1,0 +1,57 @@
+//#242 java code
+import java.util.*;
+
+public class WordLadderI {
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        Set<String> dict = new HashSet<>(wordList);
+        if (!dict.contains(endWord)) {
+            return 0;
+        }
+
+        Queue<String> queue = new LinkedList<>();
+        queue.offer(beginWord);
+        int level = 1;
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+
+            for (int i = 0; i < size; i++) {
+                String word = queue.poll().toLowerCase().trim().replaceAll("[^a-zA-Z]", "");
+                if (word.equals(endWord)) {
+                    return level;
+                }
+
+                char[] chars = word.toCharArray();
+                for (int j = 0; j < word.length(); j++) {
+                    char originalChar = chars[j];
+
+                    for (char c = 'a'; c <= 'z'; c++) {
+                        if (c == originalChar) continue;
+                        chars[j] = c;
+                        String newWord = new String(chars);
+
+                        if (dict.contains(newWord)) {
+                            queue.offer(newWord);
+                            dict.remove(newWord);
+                        }
+                    }
+                    chars[j] = originalChar;
+                }
+            }
+
+            level++;
+        }
+
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        String beginWord = "hit";
+        String endWord = "cog";
+        List<String> wordList = Arrays.asList("hot", "dot", "dog", "lot", "log", "cog");
+
+        WordLadderI wordLadderI = new WordLadderI();
+        int ladderLength = wordLadderI.ladderLength(beginWord, endWord, wordList);
+        System.out.println("Shortest transformation sequence length: " + ladderLength);
+    }
+}
