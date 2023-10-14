@@ -1,0 +1,210 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_USERS 10
+#define MAX_USERNAME_LENGTH 50
+#define MAX_PASSWORD_LENGTH 50
+#define MAX_TASKS 20
+#define MAX_TASK_LENGTH 100
+
+typedef struct {
+    char username[MAX_USERNAME_LENGTH];
+    char password[MAX_PASSWORD_LENGTH];
+} User;
+
+typedef struct {
+    char description[MAX_TASK_LENGTH];
+    int priority;
+    int isCompleted;
+} Task;
+
+typedef struct {
+    User users[MAX_USERS];
+    int userCount;
+} UserManager;
+
+typedef struct {
+    Task tasks[MAX_TASKS];
+    int taskCount;
+} TaskManager;
+
+UserManager userManager;
+TaskManager taskManager;
+
+int currentUserIndex = -1;
+
+void initializeUserManager() {
+    userManager.userCount = 0;
+}
+
+void initializeTaskManager() {
+    taskManager.taskCount = 0;
+}
+
+void addUser(const char *username, const char *password) {
+    if (userManager.userCount < MAX_USERS) {
+        strcpy(userManager.users[userManager.userCount].username, username);
+        strcpy(userManager.users[userManager.userCount].password, password);
+        userManager.userCount++;
+        printf("User %s created successfully.\n", username);
+    } else {
+        printf("User limit reached. Cannot create more users.\n");
+    }
+}
+
+int findUser(const char *username, const char *password) {
+    for (int i = 0; i < userManager.userCount; i++) {
+        if (strcmp(userManager.users[i].username, username) == 0 && strcmp(userManager.users[i].password, password) == 0) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+void login() {
+    char username[MAX_USERNAME_LENGTH];
+    char password[MAX_PASSWORD_LENGTH];
+    printf("Enter your username: ");
+    scanf(" %[^\n]", username);
+    printf("Enter your password: ");
+    scanf(" %[^\n]", password);
+    int userIndex = findUser(username, password);
+    if (userIndex != -1) {
+        currentUserIndex = userIndex;
+        printf("Welcome, %s!\n", username);
+    } else {
+        printf("Invalid username or password. Please try again.\n");
+    }
+}
+
+void logout() {
+    currentUserIndex = -1;
+}
+
+void addTask(const char *description, int priority) {
+    if (currentUserIndex != -1) {
+        if (taskManager.taskCount < MAX_TASKS) {
+            Task newTask;
+            strcpy(newTask.description, description);
+            newTask.priority = priority;
+            newTask.isCompleted = 0;
+            taskManager.tasks[taskManager.taskCount] = newTask;
+            taskManager.taskCount++;
+            printf("Task added successfully.\n");
+        } else {
+            printf("Task limit reached. Cannot add more tasks.\n");
+        }
+    } else {
+        printf("Please log in to add tasks.\n");
+    }
+}
+
+void completeTask(int index) {
+    if (currentUserIndex != -1 && index >= 0 && index < taskManager.taskCount) {
+        taskManager.tasks[index].isCompleted = 1;
+        printf("Task marked as completed: %s\n", taskManager.tasks[index].description);
+    }
+}
+
+void listTasks() {
+    if (currentUserIndex != -1) {
+        printf("Your Tasks:\n");
+        for (int i = 0; i < taskManager.taskCount; i++) {
+            Task task = taskManager.tasks[i];
+            printf("[%s] %s - Priority: %d - %s\n",
+                   task.isCompleted ? "X" : " ",
+                   task.description,
+                   task.priority,
+                   i == 0 ? "Most urgent" : "");
+        }
+    } else {
+        printf("Please log in to view tasks.\n");
+    }
+}
+
+int main() {
+    initializeUserManager();
+    initializeTaskManager();
+
+    while (1) {
+        printf("\nOptions:\n");
+        if (currentUserIndex == -1) {
+            printf("1. Create an Account\n");
+            printf("2. Log In\n");
+        } else {
+            printf("3. Log Out\n");
+            printf("4. Add Task\n");
+            printf("5. Complete Task\n");
+            printf("6. List Tasks\n");
+        }
+        printf("7. Exit\n");
+        int choice;
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                if (currentUserIndex == -1) {
+                    char username[MAX_USERNAME_LENGTH];
+                    char password[MAX_PASSWORD_LENGTH];
+                    printf("Enter a username: ");
+                    scanf(" %[^\n]", username);
+                    printf("Enter a password: ");
+                    scanf(" %[^\n]", password);
+                    addUser(username, password);
+                } else {
+                    printf("You are already logged in. Log out to create a new account.\n");
+                }
+                break;
+            case 2:
+                if (currentUserIndex == -1) {
+                    login();
+                } else {
+                    printf("You are already logged in. Log out to log in as a different user.\n");
+                }
+                break;
+            case 3:
+                if (currentUserIndex != -1) {
+                    logout();
+                    printf("Logged out.\n");
+                } else {
+                    printf("You are not logged in.\n");
+                }
+                break;
+            case 4:
+                if (currentUserIndex != -1) {
+                    char description[MAX_TASK_LENGTH];
+                    int priority;
+                    printf("Enter task description: ");
+                    scanf(" %[^\n]", description);
+                    printf("Enter task priority (1 - 5): ");
+                    scanf("%d", &priority);
+                    addTask(description, priority);
+                } else {
+                    printf("Please log in to add tasks.\n");
+                }
+                break;
+            case 5:
+                if (currentUserIndex != -1) {
+                    int taskIndex;
+                    printf("Enter the index of the task to mark as completed: ");
+                    scanf("%d", &taskIndex);
+                    completeTask(taskIndex);
+                } else {
+                    printf("Please log in to complete tasks.\n");
+                }
+                break;
+            case 6:
+                listTasks();
+                break;
+            case 7:
+                printf("Goodbye!\n");
+                exit(0);
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+
+    return 0;
+}
