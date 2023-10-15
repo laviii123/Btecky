@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoo</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <div class="head">
+     <h1>ToDo List</h1>
+  
+    </div>
+    <div class="input">
+        <input id="he" class="in"type="text" placeholder="Enter Work">
+        <button id="check"onclick="add()">Add Work</button>
+    </div>
+    <div id="todo">
+         <div class="work">
+            <ol id="mai"></ol>
+         </div>
+    </div>
+</body>
+<script>   var wop = document.getElementById("mai");
+var elem =document.getElementById("todo");
+var hj = document.getElementById("hw");
+elem.addEventListener("click",function(el){
+    console.log("clicked");
+    if(el.target.tagName=="INPUT")
+    {
+        el.target.parentElement.classList.toggle("yes");
+    }
+})
+function add()
+{
+     var ne =document.createElement("li");
+   
+    var wo = document.getElementById("he").value;
+    wop.insertAdjacentHTML("beforeend",`<li>${wo}<input type="checkbox" id="hw"></li>`);
+  
+
+}
+</script>
+</html>
