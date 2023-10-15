@@ -1,0 +1,72 @@
+    .head{
+       
+        max-width: 50vw;
+        margin: auto;
+        border-style: solid;
+        border-color: white;
+        background-color: white;
+        box-shadow: 10px 10px 10px 10px purple ;
+        text-align: center;
+        border-radius: 10px;
+        transition: 1s;
+        margin-top: 20px;
+        color: Pink;
+    }
+    .head p{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    body{
+        background-color: pink;
+    }
+    .head:hover{
+        box-shadow:  20px 0px 20px 20px purple;
+       transform: scale(.9);
+       padding: px;
+    }
+   
+    .in{
+        border-style: solid;
+        border-color: purple ;
+        border-radius: 10px; 
+         width: 54vw;
+        height: 3em;
+        margin: 40px;
+        margin-left: 15rem;
+    }
+    
+    button{
+        border-style: solid;
+        border-color: purple;
+        border-radius: 5px;
+        transition: 1s;
+        padding: 5px;
+    }
+    button:hover{
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+text-decoration: underline;
+    }
+    .work{max-width: 50vw;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        background-color: antiquewhite;
+        color: black;
+    
+        font-size: 2rem;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: purple;
+        flex-direction: row;
+    }
+    .yes{
+        text-decoration: line-through rgb(102, 0, 255) 3px;
+
+    }
+    #mai{
+        text-align: center;
+      
+    }
