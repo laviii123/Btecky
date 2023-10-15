@@ -1,0 +1,143 @@
+<html><head>
+    <title>
+        repeating the hardwork
+    </title>
+    <link rel="stylesheet" href="project1exstyle.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title"></div><img src="https://iiitkota.ac.in/static/media/logo.b831a251.png" alt="" height="200px" width="250px" align="left">
+      <b>Indian Institute Of Information Technology Kota</b>   <br>
+      <b>(भारतीय सूचना प्रौद्योगिकी संस्थान कोटा)</b><br>
+       <b> An institute of natiional importance </b><br><br><br><br>
+<a href="aboutus.html">ABOUT US</a>
+<a href="administration.html">ADMINISTRATION</a>
+<a href="admission.html">ADMISSION</a>
+<a href="people.html">PEOPLE</a>
+<a href="academics.html">ACADEMICS</a>
+<a href="placement.html">PLACEMENT</a>
+</div>
+<marquee behavior="" direction="" class="marq1">
+    <img src="https://iiitkota.ac.in/static/media/frontjul27.b668eb02.jpeg" alt="" height="400px" width="700px">
+    <img src="https://myexam.allen.ac.in/wp-content/uploads/2023/08/IIIT-Kota-Gets-Its-New-Campus-in-Kota-Classes-From-August.jpg" alt="" height="400px" width="700px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQ5-liZvxpve9dy57ykfy5gYOYkjGTSwEGEugd_VneDuQVe8a5l-I26ZqqIDUmP6azyA&usqp=CAU" alt="" height="400px" width="700px">
+    <img src="https://images.shiksha.com/mediadata/images/articles/1655281700php5mJGhG.jpeg" alt="" height="400px" width="700px">
+    <img src="https://img.collegepravesh.com/2021/04/IIIT-Kota-Past-Recruiters-2021.jpg" alt="" height="400px" width="700px">
+    <img src="https://iiitkota.ac.in/static/media/ThirdFrame.9354d1de.webp" alt="" height="400px" width="700px"> 
+    <img src="https://convocation.iiita.ac.in/convo17pics/31.JPG" alt="" height="400px" width="700px">
+</marquee>
+
+<marquee behavior="" direction="" ><hr color="blue" class="marq2"> WELCOME TO INDIAN INSTITUTE OF INFORATION TECHNOLOGY , KOTA </marquee>
+<div class="box">
+    <br><br>
+    <br><br>
+    <h1>About IIIT Kota</h1>
+    
+<img src="https://iiitkota.ac.in/static/media/Admin_and_Academic_Block.d897a11c.jpg" alt=""height="500px" width="500px"  align="center">
+<p align="center">IIIT KOTA
+    Indian Institute of Information Technology, Kota (IIIT, Kota) is an institute of national importance. IIIT Kota is a joint venture of the Ministry of Education (MoE) Govt. of India and Govt. of Rajasthan with Industry Partners in Public-Private-Partnership (PPP) model. IIIT Kota was established in 2013 and it started operating from its temporary campus in Prabha Bhawan of MNIT in 2013. Currently, the institute is mentored by Malaviya National Institute of Technology Jaipur (MNIT Jaipur)
+    
+    The permanent campus of IIIT, Kota is being constructed at Ranpur near Kota on 100.37 acres of land made available by the Govt. of Rajasthan. The construction of Phase-1 and Phase 2 of the campus is going on in full swing.
+    
+    The institute is totally dedicated towards imparting excellent research and industry –oriented education to the future technocrats of the country. The teaching and learning process at IIIT Kota are inspired by the system followed in leading national level institutes .The teaching pedagogy is based on real-life practical exposure along with strong conceptual learning.
+    
+    BACKGROUND
+    IIIT Kota started its journey with a sanctioned intake of 30 students in B.Tech.(Computer Engineering) during the Academic Sessions 2013-14. The Electronics and Communication branch was started in July 2015 with a sanctioned intake of 30 students. The institute achieved the status of an ‘Institute of National Importance’ on August 9, 2017 through ‘The Indian Institute of Information Technology (Public- Private Partnership) Act, 2017’.
+    
+    Since then the mission of IIIT Kota is to create technical professionals to achieve the present and the future requirements of engineering and allied disciplines, IIIT Kota imparts the educational system that transforms students into human power embedded with creativity , innovation and technology for the betterment of society.</p>
+    
+</div>
+<div class="studentCorner">
+   <h1 align="center">Student Corner</h1>
+    <hr>
+    </div>
+    <div class="innerbox">
+     <div class="one" style="background-color: orange; text-decoration-color: white; width: 170px; height: 125px; padding-top: 25px;  margin-right: 25px; "><h1><a href="admission.html">Admission</a> </h1> </div>
+    <div class="two" style="background-color: skyblue; text-decoration-color: white; width: 170px; height: 125px; padding-top: 25px; margin-left: 125px;"><h1><a href="library.html">Library</a> </h1></div>
+    <div class="three" style="background-color: pink; text-decoration-color: white; width: 170px; height: 125px; padding-top: 25px; margin-left: 225px;"><h1><a href="https://drive.google.com/file/d/1Qfs5B0QjI5xErYF3BoJV0jnhNNtdXeye/view?usp=sharing">Scholarship</a> </h1></div>
+    <div class="four" style="background-color: red; text-decoration-color: white; width: 170px; height: 125px; padding-top: 25px; margin-left: 325px;"><h1><a href="https://iiitkota.ac.in/curriculum">Curriculum</a> </h1></div>
+    <div class="five" style="background-color: green; text-decoration-color: white; width: 170px; height: 125px; padding-top: 25px; margin-left: 425px;"><h1><a href="https://files.iiitkota.ac.in/pdf/calendar/Calender%20I%20sem-aug23.pdf">Calendar</a> </h1></div>
+    <div class="six" style="background-color: yellow; text-decoration-color: white; width: 170px; height: 125px; padding-top: 25px; margin-left: 525px;"><h1><a href="clubs.html">Clubs</a> </h1></div>
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 align="center"> OUR DIRECTOR SIR</h1>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <br>
+    <div>
+        <img src="https://iiitkota.ac.in/static/media/director_sir.33d35c19.jpg" alt="" height="1000px" width="100%">
+        <div class="dir-col col-md-6 col-lg-5"><h5 class=" pl-4 py-3 text-justify dir-para" style="font-size: 18px; color: white; padding: 24px;">Welcome to Indian Institute of Information Technology, Kota. Since its inception, in 2013, IIIT Kota has accomplished many milestones and covered an illustrious journey in last 8 years. As one of the Premier Institutes, that is a joint venture of the Ministry of Education and Government of Rajasthan with 4 strong Industry Partners in Public-Private Partnership (PPP) mode, the institute has come a long way. IIIT Kota provides a highly conducive environment to its students for enhancing their technical and academic skills. Being a part of this institute will definitely provide lot of opportunities for grooming overall personality. I welcome you all to come and join this premier institute so that you can embark on a journey of lifelong learning.<a href="directormessage.html">Read More.</a></h5></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    
+    <h1>Events</h1>
+    <img src="https://files.iiitkota.ac.in/images/events/ayurved.webp" alt="" width="300px" height="300px">
+    <img src="https://files.iiitkota.ac.in/images/events/smartgrid.jpeg" alt="" width="300px" height="300px">
+    <img src="https://files.iiitkota.ac.in/images/events/karyashala.webp" alt="" width="300px" height="300px">
+    <br>
+    <img src="https://files.iiitkota.ac.in/images/events/women_s-day.webp" alt="" width="300px" height="300px">
+    <img src="https://files.iiitkota.ac.in/images/events/upnayan.webp" alt="" width="300px" height="300px">
+    <img src="https://files.iiitkota.ac.in/images/events/vritika.webp" alt="" width="300px" height="300px">
+    <br><br><br><br><br><br><br>
+    <footer class="firstfoot">
+         IIIT Kota Permanent Campus, Kota 325003
+         <img src="https://iiitkota.ac.in/static/media/logo.b831a251.png" alt="" align="right" width="150px" height="150px">
+         <br>
+       <a href="">&#9990; 0141-2715071</a> 
+        <br>
+       <a href="">&#9993; office@iiitkota.ac.in</a> 
+        <br><br><br>
+        &#10163; CAMPUS &#10163; HOLIDAYS &#10163; ICCW &#10163; RECRUITMENT &#10163; TENDER INVITATIONS
+        <br>
+        <br><br><br><br>
+
+        <hr>
+        <br>
+        <br>
+        <br>
+        <br>
+        &#10171; WEBMASTERS &#10171; IT INFRASTRUCTURE &#10171; RTI &#10171; SITEMAP &#10171; e-LDA Lab &#10171; RULES AND DISCIPLINE
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+    </footer class="secondfoot">
+    <footer>
+        &#169; IIIT KOTA, 2021          
+        <a href="https://iiitkota.ac.in/ug-procedure"> &#9990;</a>  
+        <a href="https://iiitkota.ac.in/ug-procedure" >&#9993;</a>  
+        <a href="https://www.facebook.com/IIITKotaOffice/"  class="fa fa-facebook"></a>                
+                                                         
+
+    </footer>
+</body>
+</html>
