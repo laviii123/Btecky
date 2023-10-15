@@ -1,0 +1,94 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+class BankAccount {
+protected:
+    std::string accountNumber;
+    std::string accountHolder;
+    double balance;
+public:
+    BankAccount(const std::string& number, const std::string& holder, double initialBalance)
+        : accountNumber(number), accountHolder(holder), balance(initialBalance) {}
+
+    virtual void deposit(double amount) {
+        balance += amount;
+    }
+
+    virtual void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        } else {
+            std::cout << "Insufficient funds!" << std::endl;
+        }
+    }
+
+    virtual void display() const {
+        std::cout << "Account Number: " << accountNumber << std::endl;
+        std::cout << "Account Holder: " << accountHolder << std::endl;
+        std::cout << "Balance: $" << balance << std::endl;
+    }
+
+    virtual ~BankAccount() {}
+};
+
+class SavingsAccount : public BankAccount {
+    double interestRate;
+public:
+    SavingsAccount(const std::string& number, const std::string& holder, double initialBalance, double rate)
+        : BankAccount(number, holder, initialBalance), interestRate(rate) {}
+
+    void deposit(double amount) override {
+        BankAccount::deposit(amount);
+        balance += amount * (interestRate / 100);
+    }
+};
+
+class CurrentAccount : public BankAccount {
+    double overdraftLimit;
+public:
+    CurrentAccount(const std::string& number, const std::string& holder, double initialBalance, double limit)
+        : BankAccount(number, holder, initialBalance), overdraftLimit(limit) {}
+
+    void withdraw(double amount) override {
+        if (balance - amount >= -overdraftLimit) {
+            balance -= amount;
+        } else {
+            std::cout << "Exceeds overdraft limit!" << std::endl;
+        }
+    }
+};
+
+int main() {
+    SavingsAccount savings("SA12345", "Alice", 5000.0, 5.0);
+    CurrentAccount current("CA67890", "Bob", 3000.0, 1000.0);
+
+    savings.deposit(1000.0);
+    current.withdraw(2000.0);
+
+    savings.display();
+    current.display();
+
+    // Writing account details to a file
+    std::ofstream outputFile("account_details.txt");
+    if (outputFile.is_open()) {
+        outputFile << "Savings Account:\n";
+        outputFile << "-----------------\n";
+        outputFile << "Account Number: " << savings.accountNumber << "\n";
+        outputFile << "Account Holder: " << savings.accountHolder << "\n";
+        outputFile << "Balance: $" << savings.balance << "\n\n";
+
+        outputFile << "Current Account:\n";
+        outputFile << "-----------------\n";
+        outputFile << "Account Number: " << current.accountNumber << "\n";
+        outputFile << "Account Holder: " << current.accountHolder << "\n";
+        outputFile << "Balance: $" << current.balance << "\n";
+
+        outputFile.close();
+        std::cout << "Account details written to account_details.txt" << std::endl;
+    } else {
+        std::cerr << "Error: Unable to write to the file." << std::endl;
+    }
+
+    return 0;
+}
