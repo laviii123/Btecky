@@ -1,0 +1,27 @@
+//Dynamic Memory Allocation  (malloc)
+
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
+int main()
+{
+    int n,avg,i,*p,sum=0;
+    printf("Enter the no of student: ");
+    scanf("%d",&n);
+    p=(int *)malloc(n*sizeof(int));
+    if(p==NULL)                     //sizeof is a special operator which returns no. of bytes of any data type    if(p==NULL)
+    {
+        printf("Memory Allocation unsuccessful");
+        exit(0);
+    }
+    for(i=0;i<n;i++)
+    printf("%d ",*(p+i));
+    printf("\nEnter the values: ");
+    for(i=0;i<n;i++)
+    scanf("%d",(p+i));
+    for(i=0;i<n;i++)
+    sum=sum+ *(p+i);
+    avg=sum/n;
+    printf("Average marks = %d",avg);
+    return 0;
+}
