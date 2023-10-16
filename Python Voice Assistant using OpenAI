@@ -1,0 +1,39 @@
+from gtts import gTTS
+import openai
+from playsound import playsound
+# Set up OpenAI API
+api_key = 'Your API Key'
+openai.api_key = api_key
+
+# Define a dictionary of user inputs and their corresponding responses
+responses = {
+    "hi": "Hello! How can I assist you today?",
+    "hello": "Hi there! How can I help you?",
+    "how are you": "I'm just a computer program, but I'm here to help you! How can I assist you today?",
+    "bye": "Goodbye! If you have more questions, feel free to ask.",
+    "thank you": "You're welcome! If you need anything else, just let me know.",
+    "help": "Sure! How can I assist you?",
+}
+
+def get_response(user_input):
+    response = responses.get(user_input.lower(), "I'm not sure how to respond to that.")
+    return response
+
+def speak(response):
+    tts = gTTS(text=response, lang='en')
+    tts.save("response.mp3")
+    playsound("response.mp3")
+
+def main():
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() == 'exit':
+            break
+
+        response = get_response(user_input)
+
+        print(f"Booby: {response}")
+        speak(response)
+
+if __name__ == '__main__':
+    main()
