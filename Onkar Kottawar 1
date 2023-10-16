@@ -1,0 +1,52 @@
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class ToDoList {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> toDoList = new ArrayList<>();
+        boolean quit = false;
+        int selectedOption = 0;
+
+        while (!quit) {
+            System.out.println("1. Add task");
+            System.out.println("2. Remove task");
+            System.out.println("3. View tasks");
+            System.out.println("4. Quit");
+            System.out.print("Enter your option: ");
+            selectedOption = scanner.nextInt();
+
+            switch (selectedOption) {
+                case 1:
+                    System.out.print("Enter task name: ");
+                    String taskName = scanner.next();
+                    toDoList.add(taskName);
+                    break;
+                case 2:
+                    System.out.print("Enter task number to remove: ");
+                    int taskNumber = scanner.nextInt();
+                    if (taskNumber <= toDoList.size()) {
+                        toDoList.remove(taskNumber - 1);
+                    } else {
+                        System.out.println("No such task exists.");
+                    }
+                    break;
+                case 3:
+                    System.out.println("Tasks: ");
+                    for (int i = 0; i < toDoList.size(); i++) {
+                        System.out.println((i + 1) + ". " + toDoList.get(i));
+                    }
+                    break;
+                case 4:
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    break;
+            }
+        }
+
+        scanner.close();
+    }
+}
