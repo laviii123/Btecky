@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Mate SC', serif !important;
+}
+
+body {
+    background: rgb(219, 217, 217);
+    background: url(../images/victorian-2472338_1920.jpg) no-repeat center center fixed;
+    background-repeat:  no-repeat;
+    background-position:  center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* Main Section */
+section {
+    min-height: calc(100vh - 70px);
+    justify-content: space-evenly;
+    text-align: center;
+    width:100%;
+}
+.main-container {
+    padding-top: 10px;
+    margin-top: 25px;
+    background: lavenderblush;
+}
+
+.myh1 {
+    padding: 12px;
+    margin: 0 auto 50px;
+    color: red;
+    font-size: 60px;
+    font-weight: 500;
+}
+
+#clock, #question, #answers {
+    padding: 10px ;
+}
+
+#clock, #question {
+    font-size: 20px;
+}
+
+#answers {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 24px;
+}
+#answers button {
+    margin: 0 auto;
+    width: 66%;
+}
+
+#time-indicator {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#time-indicator span {
+    bottom: 62px;
+    position: relative;
+}
+
+.my-correct {
+    width: 66%;
+    margin: 0 auto 10px;
+}
+.my-danger {
+    width: 75%; 
+    margin: 0 auto 10px;
+}
+
+video {
+    width:250px;
+    height:200px;
+}
+/* Footer */
+.my-footer {
+    text-align: center;
+    clear: both;
+    width: 100%;
+    font-size: 12px;
+    color: #fff;
+    color: #ccc;
+    line-height: 60px;
+    background-color: darkgray;
+    border-top: 8px solid rgb(62,62,92);
+}
+
+/* Media Query to resize videos and answer buttons and correct answer alerts */
+
+@media screen and (max-width: 576px) {
+    video {
+        width: 150px;
+        height: 120px;
+    }
+    #answers button {
+        width: 85%;
+    }
+    .my-correct {
+        width: 80%;
+    }
+    .my-danger {
+        width: 95%;
+    }
+}
+
