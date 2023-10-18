@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Page Refresh</title>
+</head>
+<body>
+    <h1>Simple Page Refresh Example</h1>
+    <p>This is a simple webpage with a refresh button.</p>
+
+    <!-- Create a button to trigger the page refresh -->
+    <button id="refreshButton">Refresh Page</button>
+
+    <script>
+        // JavaScript to refresh the page when the button is clicked
+        document.getElementById("refreshButton").addEventListener("click", function() {
+            // Use either of these lines to refresh the page
+            // location.reload();
+            // or
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>
