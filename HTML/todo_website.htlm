@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        /* Custom CSS for styling the buttons */
+        .btn-edit {
+            color: #007bff;
+        }
+        .btn-delete {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Todo List</h1>
+
+        <!-- Add Todo Form -->
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <input type="text" id="todoInput" class="form-control" placeholder="Add a new todo">
+            </div>
+            <div class="col-md-4">
+                <button id="addTodo" class="btn btn-primary btn-block">Add</button>
+            </div>
+        </div>
+
+        <!-- Todo List -->
+        <ul id="todoList" class="list-group mt-4">
+            <!-- Your todos will be dynamically added here using JavaScript -->
+        </ul>
+    </div>
+
+    <script>
+        // Function to add a new todo
+        function addTodo() {
+            const todoInput = document.getElementById("todoInput");
+            const todoText = todoInput.value.trim();
+
+            if (todoText === "") {
+                alert("Please enter a valid todo.");
+            } else {
+                const todoList = document.getElementById("todoList");
+                const listItem = document.createElement("li");
+                listItem.className = "list-group-item d-flex justify-content-between align-items-center";
+                listItem.innerHTML = `
+                    <span>${todoText}</span>
+                    <div>
+                        <button class="btn btn-sm btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                        <button class="btn btn-sm btn-delete"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </div>
+                `;
+                todoList.appendChild(listItem);
+
+                // Add event listeners for edit and delete buttons
+                const editButton = listItem.querySelector(".btn-edit");
+                editButton.addEventListener("click", () => editTodoItem(listItem));
+
+                const deleteButton = listItem.querySelector(".btn-delete");
+                deleteButton.addEventListener("click", () => deleteTodoItem(listItem));
+
+                // Clear the input field
+                todoInput.value = "";
+            }
+        }
+
+        // Function to edit a todo item
+        function editTodoItem(listItem) {
+            const todoText = listItem.querySelector("span");
+            const updatedText = prompt("Edit the todo:", todoText.textContent);
+
+            if (updatedText !== null) {
+                todoText.textContent = updatedText;
+            }
+        }
+
+        // Function to delete a todo item
+        function deleteTodoItem(listItem) {
+            if (confirm("Are you sure you want to delete this todo?")) {
+                listItem.remove();
+            }
+        }
+
+        // Event listener for adding a new todo
+        const addTodoButton = document.getElementById("addTodo");
+        addTodoButton.addEventListener("click", addTodo);
+
+        // Allow adding a todo when pressing Enter
+        const todoInput = document.getElementById("todoInput");
+        todoInput.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                addTodo();
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
