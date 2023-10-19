@@ -1,0 +1,41 @@
+
+#include <stdio.h>
+// Function for linear search
+int linearSearch(int a[], int n, int key) // Formal Parameter
+{
+
+    for (int i = 0; i < n; i++)
+    {
+        // comparison
+        if (a[i] == key)
+        {
+            return i; // Return the index where the target is found
+        }
+    }
+
+    return -1; // Return -1 if the key is not found
+}
+void main()
+{
+    int n, key;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int a[n];
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    printf("Enter the element to search for: ");
+    scanf("%d", &key); // key is the element to search for the array
+
+    int result = linearSearch(a, n, key); // Actual Parameter
+    if (result == -1)
+    {
+        printf("Element is not present in array %d", result);
+    }
+    else
+    {
+        printf("Element is present at index %d", result);
+    }
+}
