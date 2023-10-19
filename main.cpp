@@ -1,18 +1,38 @@
-//
-//  main.cpekkrrvp
-//  lenght function
-//
-//  Created by Mohd  Adnan on 07/09/21.
-//
-
 #include <iostream>
-#include <string>
-using namespace std;
 
-int main(int argc, const char * argv[]) {
-    string first;
-    cout<<"NAME ";
-    cin >> first;
-    cout << "Total Number of Words " << first.length()<<endl;
+using namespace std;
+class pointer{
+    int first;
+    int second;
+public:
+    pointer(){}
+    pointer(int a , int b);
+    void displaypoint();
+    
+    
+};
+
+
+pointer ::pointer(int a , int b)
+{
+    first = a;
+    second = b;
+}
+void pointer ::displaypoint()
+{
+    cout<<"The Point Is ("<<first<<","<<second<<")"<<endl;
+}
+int main(){
+    pointer pw,pl;
+    int a ,b;
+    cout<<"Enter the pointer ";
+    cin>>a>>b;
+    pw=pointer(a,b);
+    pw.displaypoint();
+    cout<<"Enter the pointer ";
+    cin>>a>>b;
+    pl = pointer(a,b);
+    pl.displaypoint();
+    
     return 0;
 }
