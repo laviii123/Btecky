@@ -10,14 +10,16 @@
 <body>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-
+body{
+  background-color: #288bd2;
+}
 .calculator {
     padding: 10px;
     border-radius: 1em;
     height: 380px;
     width: 400px;
     margin: auto;
-    background-color: #191b28;
+    background-color: #000000;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
@@ -32,20 +34,33 @@
 }
 
 #btn {
-    background-color: #fb0066;
+    background-color: #e91f70;
+    font-weight: bold;
 }
 
 input[type=button] {
     font-family: 'Orbitron', sans-serif;
-    background-color: #64278f;
+    background-color: #17486b;
     color: white;
     border: solid black 0.5px;
     width: 100%;
     border-radius: 5px;
     height: 70%;
     outline: none;
+    font-weight: bold;
 }
 
+#btn:hover
+{
+  font-weight: bold;
+  background-color: #e91f1f;
+}
+input[type=button]:hover
+{
+  font-weight: bold;
+  background-color: #288bd2;
+
+}
 input:active[type=button] {
     background: #e5e5e5;
     -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
