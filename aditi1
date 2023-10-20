@@ -1,0 +1,66 @@
+<Html>  
+    <head>   
+    <title>  
+    Registration Page  
+    </title>  
+    </head>  
+    <body bgcolor="Lightgreen">  
+    <br>  
+    <br>  
+    <form>  
+      
+    <label> First Name </label>         
+    <input type="text" name="first Name" size="15"/> <br> <br>  
+    <label> Middlename: </label>     
+    <input type="text" name="Middle Name" size="15"/> <br> <br>  
+    <label> Lastname: </label>         
+    <input type="text" name="Last Name" size="15"/> <br> <br>  
+      
+    <label>   
+    <br>  
+    <br>  
+    <label>   
+    Gender:  
+    </label><br>
+    <p>  
+    <input type="radio" name="male" checked/> Male </input>  
+    </p>
+    <p>
+    <input type="radio" name="female"/> Female </input>  
+    </p>
+    <p><input type="radio" name="other"/> Other
+    </p>  
+    <br>  
+    <br>  
+    <lable>
+     Do you belongs to LGBTQAI?
+    </lable><br>
+    <input type="radio" name= "yes"/> yes <br>
+    <input type="radio" name="no"/> no <br>
+      <br>
+      <br>
+    <label>   
+    Phone :  
+    </label>  
+    <input type="text" name="country code"  value="+91" size="2"/>   
+    <input type="text" name="phone" size="10"/>
+     <br>
+     <br>  
+    Address  
+    <br>  
+    <textarea cols="80" rows="5" value="address">  
+    </textarea>  
+    <br>
+    <br>  
+    Email
+    <input type="email" id="email" name="email"/> <br>
+    <br> <br>
+    Password
+    <input type="password" id="pass" name="pass"> <br>  
+    <br> <br>  
+    Re-type password:  
+    <input type="Password" id="repass" name="repass"> <br> <br>  
+    <input type="button" value="Submit"/>  
+    </form>  
+    </body>  
+    </html>
