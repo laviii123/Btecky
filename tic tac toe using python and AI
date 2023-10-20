@@ -1,0 +1,121 @@
+import math
+import random
+
+class TicTacToe:
+    def __init__(self):
+        self.board = [' ' for _ in range(9)]
+
+    def print_board(self):
+        for i in range(0, 9, 3):
+            print('|' + '|'.join(self.board[i:i + 3]) + '|')
+    
+    def available_moves(self):
+        return [i for i, spot in enumerate(self.board) if spot == ' ']
+
+    def make_move(self, position, letter):
+        self.board[position] = letter
+
+    def is_winner(self, board, letter):
+        # Check rows
+        for i in range(0, 9, 3):
+            if all(board[i+j] == letter for j in range(3)):
+                return True
+        # Check columns
+        for i in range(3):
+            if all(board[i+j] == letter for j in range(0, 9, 3)):
+                return True
+        # Check diagonals
+        if all(board[i] == letter for i in range(0, 9, 4)) or all(board[i] == letter for i in range(2, 7, 2)):
+            return True
+        return False
+
+    def is_board_full(self):
+        return all(x != ' ' for x in self.board)
+
+    def minimax(self, board, depth, maximizing):
+        if self.is_winner(board, 'O'):
+            return 1
+        elif self.is_winner(board, 'X'):
+            return -1
+        elif self.is_board_full():
+            return 0
+
+        if maximizing:
+            best_score = -math.inf
+            for move in self.available_moves():
+                board[move] = 'O'
+                score = self.minimax(board, depth + 1, False)
+                board[move] = ' '
+                best_score = max(score, best_score)
+            return best_score
+        else:
+            best_score = math.inf
+            for move in self.available_moves():
+                board[move] = 'X'
+                score = self.minimax(board, depth + 1, True)
+                board[move] = ' '
+                best_score = min(score, best_score)
+            return best_score
+
+    def find_best_move(self):
+        best_score = -math.inf
+        best_move = None
+        for move in self.available_moves():
+            self.board[move] = 'O'
+            score = self.minimax(self.board, 0, False)
+            self.board[move] = ' '
+            if score > best_score:
+                best_score = score
+                best_move = move
+        return best_move
+
+def play_game():
+    game = TicTacToe()
+
+    def print_instructions():
+        print("Welcome to Tic Tac Toe!")
+        print("The board positions are as follows:")
+        game.print_board()
+        print("Let's start playing!")
+
+    print_instructions()
+
+    while not game.is_winner(game.board, 'X') and not game.is_winner(game.board, 'O') and not game.is_board_full():
+        # Human player's turn
+        human_move = None
+        while human_move not in game.available_moves():
+            try:
+                human_move = int(input("Your turn. Choose a position from 0 to 8: "))
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+        game.make_move(human_move, 'X')
+        game.print_board()
+
+        if game.is_winner(game.board, 'X'):
+            print("You win!")
+            break
+        elif game.is_board_full():
+            print("It's a tie!")
+            break
+
+        # AI's turn
+        print("AI's turn...")
+        ai_move = game.find_best_move()
+        game.make_move(ai_move, 'O')
+        game.print_board()
+
+        if game.is_winner(game.board, 'O'):
+            print("You lose!")
+            break
+        elif game.is_board_full():
+            print("It's a tie!")
+            break
+
+    play_again = input("Do you want to play again? (yes/no): ")
+    if play_again.lower() == 'yes':
+        play_game()
+    else:
+        print("Thanks for playing!")
+
+if __name__ == '__main__':
+    play_game()
