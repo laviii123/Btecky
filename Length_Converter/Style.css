@@ -1,0 +1,30 @@
+
+.box{
+    border: 5px solid black;
+    margin-right: 400px;
+    margin-left: 400px;
+    background-color: black;
+    color: white;
+}
+.container{
+    text-align: center;
+    padding-top: 25px;
+}
+.converter{
+    display: flex;
+    padding-top: 50px;
+    padding-left: 120px;
+    padding-right: 0px;
+    gap: 30px;
+}
+.button{
+    align-items: center;
+    padding-left: 270px;
+    padding-top: 30px;
+}
+#inputvalue{
+    margin-right: 20px;
+}
+.span{
+    margin-left: 20px;
+}
