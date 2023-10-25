@@ -1,0 +1,667 @@
+[
+  {
+    "dialogue": "I am Iron Man.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Iron Man"
+  },
+  {
+    "dialogue": "I can do this all day.",
+    "options": ["Spider-Man", "Hulk", "Captain America", "Black Panther"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I have nothing to prove to you.",
+    "options": ["Captain Marvel", "Black Widow", "Scarlet Witch", "Hawkeye"],
+    "correctAnswer": "Captain Marvel"
+  },
+  {
+    "dialogue": "I am Groot.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "With great power comes great responsibility.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I can't control their fear, only my own.",
+    "options": ["Black Widow", "Hawkeye", "Scarlet Witch", "Black Panther"],
+    "correctAnswer": "Scarlet Witch"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I am inevitable.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I love you 3000.",
+    "options": ["Pepper Potts", "Tony Stark", "Happy Hogan", "Peter Parker"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "Dread it. Run from it. Destiny still arrives.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I'm always the one who gets left behind.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Black Widow"
+  },
+  {
+    "dialogue": "I'm not a hero. I'm a high-functioning sociopath.",
+    "options": ["Black Widow", "Hawkeye", "Loki", "Tony Stark"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "I understood that reference.",
+    "options": ["Black Widow", "Captain America", "Iron Man", "Thor"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I can smell the crazy on you.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "If you're nothing without the suit, then you shouldn't have it.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I can do this all day.",
+    "options": ["Spider-Man", "Hulk", "Captain America", "Black Panther"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I love you 3000.",
+    "options": ["Pepper Potts", "Tony Stark", "Happy Hogan", "Peter Parker"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "I am Groot.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "With great power comes great responsibility.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I have nothing to prove to you.",
+    "options": ["Captain Marvel", "Black Widow", "Scarlet Witch", "Hawkeye"],
+    "correctAnswer": "Captain Marvel"
+  },
+  {
+    "dialogue": "Dread it. Run from it. Destiny still arrives.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I'm not a hero. I'm a high-functioning sociopath.",
+    "options": ["Black Widow", "Hawkeye", "Loki", "Tony Stark"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "I understood that reference.",
+    "options": ["Black Widow", "Captain America", "Iron Man", "Thor"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I can smell the crazy on you.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "If you're nothing without the suit, then you shouldn't have it.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I am Iron Man.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Iron Man"
+  },
+  {
+    "dialogue": "I can do this all day.",
+    "options": ["Spider-Man", "Hulk", "Captain America", "Black Panther"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I have nothing to prove to you.",
+    "options": ["Captain Marvel", "Black Widow", "Scarlet Witch", "Hawkeye"],
+    "correctAnswer": "Captain Marvel"
+  },
+  {
+    "dialogue": "I am Groot.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "With great power comes great responsibility.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I can't control their fear, only my own.",
+    "options": ["Black Widow", "Hawkeye", "Scarlet Witch", "Black Panther"],
+    "correctAnswer": "Scarlet Witch"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I am inevitable.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I love you 3000.",
+    "options": ["Pepper Potts", "Tony Stark", "Happy Hogan", "Peter Parker"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "Dread it. Run from it. Destiny still arrives.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I'm always the one who gets left behind.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Black Widow"
+  },
+  {
+    "dialogue": "I'm not a hero. I'm a high-functioning sociopath.",
+    "options": ["Black Widow", "Hawkeye", "Loki", "Tony Stark"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "I understood that reference.",
+    "options": ["Black Widow", "Captain America", "Iron Man", "Thor"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I can smell the crazy on you.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "If you're nothing without the suit, then you shouldn't have it.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I am Iron Man.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Iron Man"
+  },
+  {
+    "dialogue": "I can do this all day.",
+    "options": ["Spider-Man", "Hulk", "Captain America", "Black Panther"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I have nothing to prove to you.",
+    "options": ["Captain Marvel", "Black Widow", "Scarlet Witch", "Hawkeye"],
+    "correctAnswer": "Captain Marvel"
+  },
+  {
+    "dialogue": "I am Groot.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "With great power comes great responsibility.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I can't control their fear, only my own.",
+    "options": ["Black Widow", "Hawkeye", "Scarlet Witch", "Black Panther"],
+    "correctAnswer": "Scarlet Witch"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I am inevitable.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I love you 3000.",
+    "options": ["Pepper Potts", "Tony Stark", "Happy Hogan", "Peter Parker"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "Dread it. Run from it. Destiny still arrives.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I'm always the one who gets left behind.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Black Widow"
+  },
+  {
+    "dialogue": "I'm not a hero. I'm a high-functioning sociopath.",
+    "options": ["Black Widow", "Hawkeye", "Loki", "Tony Stark"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "I understood that reference.",
+    "options": ["Black Widow", "Captain America", "Iron Man", "Thor"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I can smell the crazy on you.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "If you're nothing without the suit, then you shouldn't have it.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I am Iron Man.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Iron Man"
+  },
+  {
+    "dialogue": "I can do this all day.",
+    "options": ["Spider-Man", "Hulk", "Captain America", "Black Panther"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I have nothing to prove to you.",
+    "options": ["Captain Marvel", "Black Widow", "Scarlet Witch", "Hawkeye"],
+    "correctAnswer": "Captain Marvel"
+  },
+  {
+    "dialogue": "I am Groot.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "With great power comes great responsibility.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I can't control their fear, only my own.",
+    "options": ["Black Widow", "Hawkeye", "Scarlet Witch", "Black Panther"],
+    "correctAnswer": "Scarlet Witch"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I am inevitable.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I love you 3000.",
+    "options": ["Pepper Potts", "Tony Stark", "Happy Hogan", "Peter Parker"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "Dread it. Run from it. Destiny still arrives.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I'm always the one who gets left behind.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Black Widow"
+  },
+  {
+    "dialogue": "I'm not a hero. I'm a high-functioning sociopath.",
+    "options": ["Black Widow", "Hawkeye", "Loki", "Tony Stark"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "I understood that reference.",
+    "options": ["Black Widow", "Captain America", "Iron Man", "Thor"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I can smell the crazy on you.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "If you're nothing without the suit, then you shouldn't have it.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I am Iron Man.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Iron Man"
+  },
+  {
+    "dialogue": "I can do this all day.",
+    "options": ["Spider-Man", "Hulk", "Captain America", "Black Panther"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I have nothing to prove to you.",
+    "options": ["Captain Marvel", "Black Widow", "Scarlet Witch", "Hawkeye"],
+    "correctAnswer": "Captain Marvel"
+  },
+  {
+    "dialogue": "I am Groot.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "With great power comes great responsibility.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I can't control their fear, only my own.",
+    "options": ["Black Widow", "Hawkeye", "Scarlet Witch", "Black Panther"],
+    "correctAnswer": "Scarlet Witch"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I am inevitable.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I love you 3000.",
+    "options": ["Pepper Potts", "Tony Stark", "Happy Hogan", "Peter Parker"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "Dread it. Run from it. Destiny still arrives.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I'm always the one who gets left behind.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Black Widow"
+  },
+  {
+    "dialogue": "I'm not a hero. I'm a high-functioning sociopath.",
+    "options": ["Black Widow", "Hawkeye", "Loki", "Tony Stark"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "I understood that reference.",
+    "options": ["Black Widow", "Captain America", "Iron Man", "Thor"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I can smell the crazy on you.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "If you're nothing without the suit, then you shouldn't have it.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I am Iron Man.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Iron Man"
+  },
+  {
+    "dialogue": "I can do this all day.",
+    "options": ["Spider-Man", "Hulk", "Captain America", "Black Panther"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I have nothing to prove to you.",
+    "options": ["Captain Marvel", "Black Widow", "Scarlet Witch", "Hawkeye"],
+    "correctAnswer": "Captain Marvel"
+  },
+  {
+    "dialogue": "I am Groot.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "With great power comes great responsibility.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I can't control their fear, only my own.",
+    "options": ["Black Widow", "Hawkeye", "Scarlet Witch", "Black Panther"],
+    "correctAnswer": "Scarlet Witch"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  },
+  {
+    "dialogue": "I am inevitable.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I love you 3000.",
+    "options": ["Pepper Potts", "Tony Stark", "Happy Hogan", "Peter Parker"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "Dread it. Run from it. Destiny still arrives.",
+    "options": ["Loki", "Thanos", "Red Skull", "Ronan"],
+    "correctAnswer": "Thanos"
+  },
+  {
+    "dialogue": "I'm always the one who gets left behind.",
+    "options": ["Thor", "Black Widow", "Iron Man", "Captain America"],
+    "correctAnswer": "Black Widow"
+  },
+  {
+    "dialogue": "I'm not a hero. I'm a high-functioning sociopath.",
+    "options": ["Black Widow", "Hawkeye", "Loki", "Tony Stark"],
+    "correctAnswer": "Tony Stark"
+  },
+  {
+    "dialogue": "I understood that reference.",
+    "options": ["Black Widow", "Captain America", "Iron Man", "Thor"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I can smell the crazy on you.",
+    "options": ["Rocket", "Drax", "Star-Lord", "Gamora"],
+    "correctAnswer": "Rocket"
+  },
+  {
+    "dialogue": "If you're nothing without the suit, then you shouldn't have it.",
+    "options": ["Spider-Man", "Iron Man", "Thor", "Black Panther"],
+    "correctAnswer": "Spider-Man"
+  },
+  {
+    "dialogue": "I'm always angry.",
+    "options": ["Iron Man", "Thor", "Hulk", "Black Widow"],
+    "correctAnswer": "Hulk"
+  },
+  {
+    "dialogue": "I'm just a kid from Brooklyn.",
+    "options": ["Hawkeye", "Iron Man", "Thor", "Captain America"],
+    "correctAnswer": "Captain America"
+  },
+  {
+    "dialogue": "I see a suit of armor around the world.",
+    "options": ["Ultron", "Iron Man", "Hulk", "Captain America"],
+    "correctAnswer": "Ultron"
+  }
+]
