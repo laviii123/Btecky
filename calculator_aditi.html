@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA_Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<style>
+    html {
+        box-sizing: border-box;
+        height: 100%;
+    }
+    
+    *,
+    *::after,
+    *::before {
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        align-items: center;
+        background: linear-gradient(45deg, hsla(43, 84%, 85%, 1) 30%, hsla(325, 71%, 70%, 1) 100%);
+        display: flex;
+        font-family: Arial, Helvetica, sans-serif;
+        font-display: swap;
+        height: inherit;
+        justify-content: center;
+    
+    
+    }
+    
+    .wrapper {
+        backdrop-filter: blur(5.5px);
+        -webkit-backdrop-filter: blur(5.5px);
+        box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+        color: #232323;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        background: rgba(255, 255, 255, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        flex-basis: 400px;
+        height: 540px;
+        padding: 20px 35px;
+    }
+    
+    .screen {
+        backdrop-filter: blur(55.5px);
+        -webkit-backdrop-filter: blur(5.5px);
+        background: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 18px;
+        box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+        color: #232323;
+        font-size: 35px;
+        overflow: auto;
+        padding: 0px;
+        text-align: right;
+        width: 326px;
+    }
+    
+    .calc-button-row {
+        display: flex;
+        justify-content: space-around;
+        margin: 5% 0;
+    }
+    
+    .calc-button {
+        backdrop-filter: blur(55.5px);
+        -webkit-backdrop-filter: blur(5.5px);
+        background: rgba(255, 255, 255, 0, 0.75);
+        border: 1px solid rgba(35, 35, 35, 35);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(35, 35, 35, 0.01);
+        color: #232323;
+        flex-basis: 20%;
+        font-family: inherit;
+        font-size: 24px;
+        height: 65px;
+    
+    }
+    
+    .calc-button:last-child {
+        backdrop-filter: blur(55.5px);
+        -webkit-backdrop-filter: blur(5.5px);
+        background: rgba(255, 255, 255, 0, 0.75);
+        border: 1px solid rgba(35, 35, 35, 35);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(35, 35, 35, 0.01);
+        color: #fff;
+        background: #f06299;
+    
+    }
+    
+    .calc-button:last-child:hover {
+        background: #ec1d6d;
+        color: inherit;
+    }
+    
+    .calc-button:active {
+        background: wheat;
+        color: #ffffff;
+    
+    }
+    
+    .double {
+        flex-basis: 28%;
+    }
+    
+    .triple {
+        flex-basis: 73%;
+    
+    }
+</style>
+<body>
+   
+  <div class="wrapper ">
+        <section class="screen">
+            0
+        </section>
+    <section class="calc-buttons">
+        <div class="calc-button-row">
+            <button class="calc-button double">
+                C
+            </button>
+            <button class="calc-button ">
+                &larr;
+            </button>
+            <button class="calc-button ">
+                %
+            </button>
+            <button class="calc-button ">
+                &divide;
+            </button>
+        </div>
+        <div class="calc-button-row">
+            <button class="calc-button ">
+                7
+            </button>
+            <button class="calc-button ">
+                8
+            </button>
+            <button class="calc-button ">
+                9
+            </button>
+            <button class="calc-button ">
+                &times;
+            </button>
+        </div>
+        <div class="calc-button-row">
+            <button class="calc-button ">
+                4
+            </button>
+            <button class="calc-button ">
+                5
+            </button>
+            <button class="calc-button ">
+                6
+            </button>
+            <button class="calc-button ">
+                -
+            </button>
+
+        </div>
+        <div class="calc-button-row ">
+            <button class="calc-button ">
+                1
+            </button>
+            <button class="calc-button ">
+                2
+            </button>
+            <button class="calc-button ">
+                3
+            </button>
+            <button class="calc-button ">
+                &plus;
+            </button>
+        </div>
+        <div class="calc-button-row">
+            <button class="calc-button ">
+                0
+            </button>
+            <button class="calc-button ">
+                e
+            </button>
+            <button class="calc-button ">
+                .
+            </button>
+            <button class="calc-button ">
+                &equals;
+            </button>
+        </div>
+    </section>
+
+  </div>
+  <script>
+    let runningTotal=0;
+let buffer="0";
+let previousOperator;
+const screen=document.querySelector('.screen');
+
+function buttonClicks(value){
+if(isNaN(value)){
+    handleSymbol(value);
+}
+else{
+    handleNumber(value);
+}
+screen.innerText=buffer;
+}
+
+function handleSymbol(symbol){
+switch(symbol){
+case 'C':
+    buffer='0';
+    runningTotal=0;
+    break;
+case '=':
+    if (previousOperator===null){
+    return
+    }
+    flushOperation(parseInt(buffer));
+    previousOperator=null;
+    buffer=runningTotal;
+    break;
+case  '←':
+    if(buffer.length===1){
+        buffer=0;
+    }
+    else{
+        buffer=buffer.substring(0,buffer.length-1);
+    }
+    break;
+    case '+':
+    case '-':
+    case '×':
+    case '÷' :
+    case '%':    
+    handleMath(symbol);
+    break;  
+}
+}
+function handleMath(symbol){
+if(buffer==='0'){
+    return 
+}
+const intBuffer=parseInt(buffer);
+if ( runningTotal===0){
+    runningTotal=intBuffer;
+}
+else{
+    flushOperation(intBuffer);
+}
+previousOperator=symbol;
+buffer='0';
+
+}
+function flushOperation(intBuffer){
+if(previousOperator==='+'){
+    runningTotal += intBuffer;
+}
+else if (previousOperator==='-'){
+    runningTotal -= intBuffer;
+}
+else if (previousOperator==='×'){
+    runningTotal *=intBuffer;
+}
+else if (previousOperator==='÷'){
+    runningTotal /=intBuffer;
+}
+else if (previousOperator ==='%'){
+    runningTotal %=intBuffer;
+}
+}
+
+function handleNumber(numberString){
+if(buffer==="0"){
+    buffer=numberString;
+}
+else{
+    buffer += numberString;
+}
+}
+function init(){
+document.querySelector('.calc-buttons').addEventListener('click',function(event){
+    buttonClicks(event.target.innerText);
+})
+}
+init();
+</script>
+</body>
+
+</html>
