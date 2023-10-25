@@ -1,0 +1,68 @@
+.text_only {
+    background-color:  #1F2937;;
+    color: rgb(48, 210, 228);
+    
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+.txt1 {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    animation: blinking 2s infinite;
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.txt2 {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    font-style: oblique;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+@keyframes blinking {
+    0% { color: #35c6ea; }
+    25% {color:blueviolet}
+    50% { color: #65c724; }
+    80% {color: white;}
+    100% { color: #b21693; }
+  }
+
+  @keyframes blinking2 {
+    0% { color: #c91111; }
+    
+    100% { color: #f7f4f1; }
+  }  
+
+#result {
+    animation: blinking 2s infinite;
+}
+
+canvas{
+    color:white;
+    border: white dashed 2px;
+    padding:15px;
+  }
+
+ #clue {
+    background-color: rgb(126, 197, 230); margin: 20px; justify-items: center; font-size: 40px;
+ } 
+#lives {
+    background-color: rgb(199, 225, 240); margin: 20px; justify-items: center; font-size: 40px;
+    animation: blinking2 1s infinite;
+}
+ #result {background-color: rgb(240, 240, 211); margin: 20px; justify-items: center; font-size: 40px;}
+
+ #play_again {background-color: rgb(235, 38, 209); margin: 20px; justify-items: center; font-size: 40px;}
+
+ #buttons {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+ }

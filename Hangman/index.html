@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="main.js" defer></script>
+</head>
+<body >
+    <div class="text_only">
+        <h1 class="txt1"><strong>Hangman</strong> <br></h1>
+         <h3 class="txt2" style="color:rgb(254, 251, 251) ;">Guess the right word or get Hanged !</h3>
+         
+         <ol style="margin-left: 20px;"><h3 style="color: whitesmoke;">Instructions: <br></h3>
+             <li >You need to guess a word rightly to win the game</li>
+             <li>You will be given a clue pertaining the word</li>
+             <li >To guess the word, proceed with each alphabet at a time</li>
+             <li>Select an alphabet from the list of alphabets and the alphabet will get filled automaticaly at all its places if the alphabet exists. </li>
+             <li>You can guess incorrectly for maximum 10 times.</li>
+         </ol>
+         <h1>Choose difficulty level: </h1>
+         <button type="button" class="btn btn-success" id="easy">Hard</button>
+         <button type="button" class="btn btn-info" id="hard">Easy</button>
+         
+         <h1 style="color: white; font-family: Arial, Helvetica, sans-serif; margin: 50px;">Use the alphabets below<br></h1>
+    </div>
+    <div id="buttons" style="margin: 10px; background-color: blueviolet;" >
+        <br> 
+        
+        
+</div>
+
+<h1>Clue :<br></h1>
+<p id="clue"></p>
+<p id="lives" >Life: 10/5 </p>
+<div id="result"  ></div>
+<div id="play_again" >
+    
+    <a class="btn btn-primary" href="javascript:location.reload(true)" role="button" style="margin-left: 50px;" id="again">Play Again</a>
+    
+</div>
+<h1 id="reveal"></h1>
+<canvas id="man" style="background-color: antiquewhite; margin: 50px ;">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+
+
+
+<div>
+    Time Left ::
+    <input id="minutes" type="text" style="width: 10px;
+         border: none; font-size: 16px; 
+        font-weight: bold; color: black;"><font size="5"> :
+                    </font>
+    <input id="seconds" type="text" style="width: 20px;
+                    border: none; font-size: 16px;
+                    font-weight: bold; color: black;">
+</div>
+
+<h1>Scores:</h1>
+<ul class="score">
+</ul>
+</body>
+</html>
