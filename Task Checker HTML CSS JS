@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #task-list {
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+
+        .task-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        #new-task {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="task-list">
+        <h2>Task Checker</h2>
+        <div id="new-task">
+            <input type="text" id="task-input" placeholder="Enter a new task">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <div id="tasks">
+            <!-- Tasks will be added here -->
+        </div>
+    </div>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById("task-input");
+            const taskText = taskInput.value.trim();
+
+            if (taskText !== "") {
+                const taskList = document.getElementById("tasks");
+
+                // Create a new task item
+                const taskItem = document.createElement("div");
+                taskItem.className = "task-item";
+
+                // Create a checkbox
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.addEventListener("change", toggleTask);
+
+                // Create a task label
+                const taskLabel = document.createElement("span");
+                taskLabel.textContent = taskText;
+
+                // Append checkbox and label to task item
+                taskItem.appendChild(checkbox);
+                taskItem.appendChild(taskLabel);
+
+                // Append task item to the task list
+                taskList.appendChild(taskItem);
+
+                // Clear the input field
+                taskInput.value = "";
+            }
+        }
+
+        function toggleTask(event) {
+            const taskItem = event.target.parentElement;
+            taskItem.classList.toggle("completed");
+        }
+    </script>
+</body>
+</html>
