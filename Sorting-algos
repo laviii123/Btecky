@@ -1,0 +1,182 @@
+/** Includes 5 types of sorting techniques : 
+ *  i)   Bubble Sort
+ *  ii)  Selection Sort
+ *  iii) Insertion Sort
+ *  iv)  Merge Sort
+ *  v)   Quick Sort
+ * 
+ * All sorting done in ascending order */
+
+package Sorting;
+
+import java.util.Scanner;
+
+public class Sort {
+    //swapping 2 elements 
+    public static int[] swap(int arr[], int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+
+        return arr;
+    }
+
+    //displays the array
+    public static void display(int arr[]) {
+        for(int i=0; i<arr.length; i++) {
+            System.out.print(arr[i]+"\t");
+        }
+        System.out.println();
+    }
+
+    //BUBBLE SORT : pushes the largest element at the end
+    //Time Complexity : O(n^2)
+    public static void BubbleSort(int arr[],int n) {
+        for(int i=0; i<n-1; i++) {
+            for(int j=0; j<n-1-i; j++) {
+                if(arr[j] > arr[j+1]) {
+                    swap(arr, j, j+1);
+                }
+            }
+        }
+        System.out.println("Bubble Sort : ");
+        display(arr);
+    }
+
+    //SELECTION SORT : pushes the smallest element at the end
+    //Time Complexity : O(n^2)
+    public static void SelectionSort(int arr[],int n) {
+        for(int i=0; i<n-1; i++) {
+            int min = i;
+            for(int j=i+1; j<n; j++) {
+                if(arr[min] > arr[j]) {
+                    min = j;
+                }
+            }
+            //swapping only once per i-loop
+            swap(arr, min, i);
+        }
+        System.out.println("Selection Sort : ");
+        display(arr);
+    }
+
+    //INSERTION SORT : got 2 parts sorted and unsorted. Keeps on moving elements from unsorted part to sorted part
+    //Time Complexity : O(n^2)   still faster and more stable than bubble/selection sort
+    public static void InsertionSort(int arr[],int n) {
+        for(int i=0; i<n-1; i++) {
+            int current = arr[i];   //start of unsorted part
+            int j = i-1;    //end of sorted part
+            while(j >= 0 && current < arr[j]) {     //sorting the sorted part in accordance to the new element
+                arr[j+1] = arr[j];  //each element getting pushed towards the end of the sorted part
+                j--;    //traversing from the end of the sorted array to it's start
+            }
+            //placement
+            arr[j+1] = current;
+        }
+        System.out.println("Insertion Sort : ");
+        display(arr);
+    }
+
+    //MERGE SORT : Divide And Conquer rule. Requires extra memory because an extra needs to be created
+    //Time Complexity : O(nlogn)
+    public static void conquer(int arr[], int si, int mid, int ei) {    //O(n)
+        int merge[] = new int[ei - si + 1];
+        int idx1 = si;  //tracks 1st array
+        int idx2 = mid+1;   //tracks 2nd part
+        int x = 0;  //tracks merge[]
+
+        while(idx1 <= mid && idx2 <= ei) {
+            if(arr[idx1] <= arr[idx2]) {
+                merge[x++] = arr[idx1++];
+            }
+            else {
+                merge[x++] = arr[idx2++];
+            }
+        }
+        //for remaining elements
+        while(idx1 <= mid) {
+            merge[x++] = arr[idx1++];
+        }
+        while(idx2 <= ei) {
+            merge[x++] = arr[idx2++];
+        }
+
+        //copying to original array
+        for(int i=0, j=si; i<merge.length; i++, j++) {  //j controls orginal array
+            arr[j] = merge[i];
+        }
+    }
+    public static void divide(int arr[], int si, int ei) {      //O(logn)
+        if(si >= ei) {
+            return;
+        }
+        int mid = si + (ei - si)/2;
+        divide(arr, si, mid);   //1st part
+        divide(arr, mid+1, ei);     //2nd part
+        conquer(arr, si, mid, ei);
+    }
+
+    /** QUICK SORT : Pivot & Partition. 
+     * Pivot can be : i)   random 
+     *                ii)  median 
+     *                iii) first element
+     *                iv)  last element
+     * Doesn't requuire extra memory
+    */
+    /** Time Complexity : 
+     *      Worst case : O(n^2)     It happens when pivot element is either largest or smallest value in the array.
+     *      Average case : O(nlogn)     Default Time Complexity
+    */
+    public static int partition(int arr[], int low, int high) {
+        int pivot = arr[high];
+        int i = low - 1;
+
+        for(int j=low; j<high; j++) {
+            if(arr[j] < pivot) {
+                i++;
+                swap(arr, i, j);
+            }
+        }
+        //positioning the pivot element
+        i++;
+        swap(arr, i, high);
+        return i;   //returning pivot index
+    }
+    public static void QuickSort(int arr[], int low, int high) {
+        if(low < high) {
+            int pidx = partition(arr, low, high);   //pivot index
+
+            QuickSort(arr, low, pidx-1);    //Smaller than pivot
+            QuickSort(arr, pidx+1, high);   //Larger than pivot
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n;
+
+        //accepting values
+        System.out.print("Enter n : ");
+        n = sc.nextInt();
+        System.out.println("Enter "+n+" elements : ");
+        int arr[] = new int[n];
+        for(int i=0; i<n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        sc.close();
+
+        BubbleSort(arr, n);
+        SelectionSort(arr, n);
+        InsertionSort(arr, n);
+        
+        // Merge sort
+        divide(arr, 0, n-1);    
+        System.out.println("Merge Sort : ");
+        display(arr);
+
+        //Quick sort
+        QuickSort(arr, 0, n-1);
+        System.out.println("Quick Sort : ");
+        display(arr);
+    } 
+}
