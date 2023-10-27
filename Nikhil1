@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <div class="envelope">
+            <div class="msg"><span class="notification">4</span></div>
+            <div class="top-part"></div>
+            <div class="right-part"></div>
+            <div class="left-part"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+}
+
+#main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.envelope {
+    width: 160px;
+    height: 80px;
+    background: #0d305e;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.left-part,
+.right-part {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    bottom: 0%;
+    filter: drop-shadow(0px 0px 1px rgb(0, 0, 0));
+}
+
+.left-part::before,
+.right-part::before,
+.top-part::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 10px 10px;
+}
+
+.left-part::before {
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    background: #0b2a66;
+}
+
+.right-part::before {
+    background: #1d3c7b;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.top-part {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    transition: 1s .2s;
+    transform-origin: top;
+    transform: rotateX(1deg);
+    filter: drop-shadow(0px 1px 1px rgb(0, 0, 0, .8));
+}
+
+.top-part::before {
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
+    background: #011e43;
+}
+
+.msg {
+    bottom: 0;
+    width: 80%;
+    height: 80%;
+    color: white;
+    transition: .5s;
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    background: #dddddd;
+}
+
+.msg::before,
+.msg::after {
+    content: '';
+    left: 5%;
+    height: 10px;
+    position: absolute;
+    border-radius: 50px;
+    background: #cbcbcb;
+}
+
+.msg::before {
+    top: 15%;
+    width: 42%;
+}
+
+.msg::after {
+    top: 40%;
+    width: 50%;
+}
+
+.notification {
+    top: -15%;
+    opacity: 0;
+    right: -10%;
+    width: 25px;
+    height: 25PX;
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    border-radius: 50%;
+    transition: 1s .5s;
+    transform: scale(0);
+    font-family: calibri;
+    background: #f46868;
+    box-shadow: 0px 0px 2px 1px #47464661;
+}
+
+.envelope:hover .msg {
+    transform: translateY(-50px);
+    transition: 1.5s .2s !important;
+    z-index: 3;
+
+}
+
+.envelope:hover .top-part {
+    transform: rotateX(190deg);
+    transition: .5s !important;
+    filter: none;
+}
+
+.envelope:hover .notification {
+    transform: scale(1);
+    opacity: 1;
+}
