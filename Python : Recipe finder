@@ -1,0 +1,26 @@
+class RecipeFinder:
+    def __init__(self):
+        self.recipes = {
+            "Spaghetti Bolognese": "Here's the Spaghetti Bolognese recipe...",
+            "Chicken Stir-Fry": "Here's the Chicken Stir-Fry recipe...",
+            "Chocolate Chip Cookies": "Here's the Chocolate Chip Cookies recipe..."
+            # Add more recipes here
+        }
+
+    def find_recipe(self, recipe_name):
+        recipe = self.recipes.get(recipe_name)
+        if recipe:
+            print(recipe)
+        else:
+            print("Recipe not found.")
+
+if __name__ == "__main__":
+    finder = RecipeFinder()
+    print("Welcome to the Recipe Finder!")
+
+    while True:
+        recipe_name = input("Enter the name of the recipe (or 'quit' to exit): ")
+        if recipe_name.lower() == "quit":
+            print("Goodbye!")
+            break
+        finder.find_recipe(recipe_name)
