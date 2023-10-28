@@ -1,0 +1,52 @@
+import random
+
+class Character:
+    def __init__(self, name, hp, attack):
+        self.name = name
+        self.hp = hp
+        self.attack = attack
+
+    def take_damage(self, damage):
+        self.hp -= damage
+
+    def is_alive(self):
+        return self.hp > 0
+
+    def attack_enemy(self, enemy):
+        damage = random.randint(0, self.attack)
+        print(f"{self.name} attacks {enemy.name} for {damage} damage.")
+        enemy.take_damage(damage)
+
+class Enemy(Character):
+    pass
+
+def battle(hero, enemy):
+    print(f"A wild {enemy.name} appears!")
+    while hero.is_alive() and enemy.is_alive():
+        hero.attack_enemy(enemy)
+        if enemy.is_alive():
+            enemy.attack_enemy(hero)
+        print(f"{hero.name}'s HP: {hero.hp}")
+        print(f"{enemy.name}'s HP: {enemy.hp}")
+        print("-------------")
+
+    if hero.is_alive():
+        print(f"{hero.name} defeated the {enemy.name}!")
+    else:
+        print(f"{hero.name} was defeated by the {enemy.name}.")
+
+# Main game loop
+if __name__ == "__main__":
+    hero = Character("Hero", 100, 20)
+    enemy = Enemy("Goblin", 50, 10)
+
+    print("Welcome to Text-Based RPG!")
+    while True:
+        command = input("Type 'battle' to fight or 'quit' to exit: ").lower()
+        if command == "battle":
+            battle(hero, enemy)
+        elif command == "quit":
+            print("Thanks for playing. Goodbye!")
+            break
+        else:
+            print("Invalid command. Type 'battle' to fight or 'quit' to exit.")
